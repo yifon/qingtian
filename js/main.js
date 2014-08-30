@@ -102,3 +102,16 @@ var tabOptionIndex2 = 0;
          $(".SmenuCont").eq(tabOptionIndex).addClass('SmenuContentOn0').siblings().removeClass('SmenuContentOn0');
      }
  }
+
+// 商品交易点击放大图片
+$(function(){
+    $('.small_img a').mouseover(function(){
+        var $parent = $(this).parents('div.content_l');
+        var index = $('.small_img a').index(this);
+        var $imgscroll = $parent.find('.big_img');
+        var newhref = $(this).attr('href');
+        $imgscroll.find('a').attr('href',newhref);
+        $imgscroll.find('img').eq(index).show().siblings().hide();
+        $(this).addClass('current_b').siblings().removeClass('current_b');
+    })
+})

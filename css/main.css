@@ -26,8 +26,8 @@ img{border: none;}
 }
 
 .header_t .nav{
-	float: right;
-	margin: 30px 20px 0 0;
+	float: left;
+	margin: 50px 0 0 100px;
     height: 71px;
 }
 .header_t .nav span{
@@ -47,34 +47,59 @@ img{border: none;}
 
 .header_b{
 	background-color: #004066;
-    height: 28px;
+    height: 28px;   
+    line-height: 28px;
     margin-top: -8px;
     position: relative;
     z-index: 3;
+    color: #fff;
+    font-size: 14px;
+}
+.header .myspan{width: 480px;float: right;}
+.header_b a{color: #fff;}
+.header_b a:hover{color: #f00;}
+.header_b .login a{padding: 0 8px;}
+.header_b a img{margin-right: 4px;}
+.header_b span{margin-right: 25px;}
+
+.search{
+	margin: 125px 0 0 0;
+	float: right;
+	background: url(../images/search.png) no-repeat;
+	width: 135px;
+	height: 27px;
+}
+.search input{
+	border: 0;
+	width: 80px;
+	height: 20px;
+	background-color: transparent;
 }
 .wrapper{
 	width: 1180px;
 	margin: 0 auto;
 }
+
+/*图片轮播*/
 .wrapper_one{
 	position: relative;
 	width: 1180px;
-	height: 490px;
+	height: 529px;
 	float: left;
 	overflow: hidden;
 }
 .slide {
 	position: relative;
 	width: 7000px;
-	height: 490px;
+	height: 529px;
 	
 }
 
-.slide img{width: 1180px;}
+.slide img{width: 1180px;height: 529px;}
 .spanBtn b{
 	position: absolute;
 	top: 227px;
-	width: 20px;
+	width: 35px;
 	height: 35px;
 	opacity: 0.75;
 	cursor: pointer;
@@ -82,12 +107,12 @@ img{border: none;}
 .spanBtn .prev{
 	margin-left: 10px;
 	left: 0;
-	background: url(../images/prev.png);
+	background: url(../images/prev.png) no-repeat;
 }
 .spanBtn .next{
 	margin-right: 10px;
 	right: 0;
-	background: url(../images/next.png);
+	background: url(../images/next.png) no-repeat;
 }
 .pagination {
 	list-style: none;
@@ -117,6 +142,7 @@ img{border: none;}
 	background-position: 0px -0px 
 }
 
+/*作品欣赏*/
 .wrapper_two,.wrapper_three,.wrapper_four,.wrapper_five{
 	margin: 32px auto 0;
 }
@@ -169,10 +195,9 @@ img{border: none;}
     margin-top: 20px;
 }
 .SmenuTitle{
-	margin-left: 60px;
+	margin-left: 70px;
     border-bottom: 2px solid #eee;
     height: 28px;
-    width: 89%;
     position: relative;
 }
 .SmenuTitle ul{
@@ -186,14 +211,10 @@ img{border: none;}
     padding-bottom: 8px;
 }
 .SmenuTitleOn0{
-    background: url('../images/down-triangle.png') no-repeat scroll 0px 21px transparent;
+    border-bottom: 3px solid #00b5fd;
+    margin-top: -2px;
 
 }
-.SmenuTitleOn10,.SmenuTitleOn11{
-    background: url('../images/down-triangle_green.png') no-repeat scroll 0px 23px transparent;
-
-}
-
 .SmenuTitle ul li a {
     text-decoration: none;
     color: #000;
@@ -206,11 +227,11 @@ img{border: none;}
 }
 .SmenuCont{
     display: none;
-    margin: 40px 60px;
+    margin: 40px 0;
 }
 .SmenuCont .SmenuImg img{
-    width: 243px;
-    height: 365px;
+    width: 202px;
+    height: 302px;
 }
 .SmenuContentOn0{
     display: block;
@@ -218,13 +239,11 @@ img{border: none;}
 }
 
 .SmenuContent ul li{
-    width: 243px;
-    float: left;
-    margin-right: 25px;
+    width: 202px;
+    float: right;
+	margin-left: 26px;
 }
-.SmenuContent ul li:last-child{
-    margin-right: 0;
-}
+
 .SmenuContent ul li p{
     text-align: center;
     line-height: 27px;
@@ -256,7 +275,127 @@ img{border: none;}
 	margin-bottom: 35px;
 	display: block;
 	height: 90px;
-	width: 243px;
+	width: 200px;
 	border-bottom: 2px solid #d2d0cf;
 	border-right: 2px solid #d2d0cf;
+}
+
+/*晴天学院*/
+.content_t{
+	margin-top: 30px;
+	font-size: 12px;
+}
+.content_t li{
+	float: left;
+	margin-left: 55px;
+	position: relative;
+}
+.content_t .Img_t img{
+	width: 239px;
+	height: 179px;
+}
+.content_t .state_t{
+	background-color: #000;
+    display: block;
+    float: left;
+    height: 50px;
+    opacity: 0.25;
+    position: absolute;
+    z-index: 5;
+    top: 129px;
+    width: 239px;
+}
+.content_t .Img_t p{
+	margin: 15px 0 0 10px;
+	position: absolute;
+	z-index: 15;
+	color: #fff;
+	top: 129px;
+	font-weight: bold;
+
+}
+.content_t .state_b{
+	width: 239px;
+}
+.content_t .state_b strong{font-size: 13px;}
+.content_t .state_b p{line-height: 23px;margin-top: 5px;}
+.content_t .state_b a{
+	display: block;
+	float: right;
+	width: 72px;
+	color: #fff;
+	background-color: #eacbb6;
+	text-align: center;
+}
+.content_t .state_b a:hover{background-color: #f5bfd7}
+
+/*商品交易*/
+.content_l{
+	float: left;
+	margin: 20px 0 0 55px;
+}
+
+.big_img,.big_img a,.big_img img{
+	display: block;
+	width: 517px;
+	height: 324px;
+	overflow: hidden;
+}
+.small_img{
+	height: 65px;
+}
+.small_img a{
+	margin-top: 8px;	
+	display: block;
+	float: left;
+	width: 97px;
+	height: 65px;
+	opacity: 0.5;
+}
+.small_img .current_b{opacity: 1;}
+.small_img a+a{margin-left: 8px;}
+.small_img img{
+	width: 98px;
+	height: 65px;
+}
+
+/*底部*/
+.footer{
+	position: relative;
+	margin: 0 auto;
+	height: 427px;
+	width: 100%;
+	background: url(../images/footer.png);
+}
+.footer .bg{
+	height: 170px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	opacity: 0.5;
+	background-color: #000;
+}
+.footer .grid_row{
+
+	position: absolute;
+	bottom: 0;
+	left: 200px;
+	height: 150px;
+
+}
+.footer .logo_b{
+	float: left;
+	margin: 10px 120px 0 0;
+	width: 211px;
+	height: 60px;
+}
+.row{float: left;margin-right: 100px;}
+.grid_row li a{
+	display: block;
+	color: #fff;
+	line-height: 25px;
+	text-align: left;
+}
+.grid_row li a img{
+	margin-right: 5px;
 }
