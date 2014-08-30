@@ -1,0 +1,262 @@
+*{margin: 0;padding: 0;}
+html{overflow-y: scroll;}
+body {color: #333;font-family:'Microsoft YaHei','微软雅黑','SimSun',"宋体",serif;}
+li{list-style:none;}
+a{text-decoration: none;}
+img{border: none;}
+.clear{clear: both;}
+.header{
+	margin: 0 auto;
+	height: 160px;
+	background: url(../images/Baner.png);
+}
+.header_t{
+	margin: 0 auto;
+	width: 1180px;
+}
+.header_t .logo{
+	margin-top: 25px;
+	float: left;
+	width: 400px;
+}
+.header_t #logo_t{
+	margin-left: 40px;
+	width: 306px;
+	height: 87px;
+}
+
+.header_t .nav{
+	float: right;
+	margin: 30px 20px 0 0;
+    height: 71px;
+}
+.header_t .nav span{
+	background-image: url("../images/nav_06.png");
+    display: inline;
+    padding: 0 10px;
+    float: left;
+    height: 71px;
+    width: 80px;
+    border-right: 1px solid #b0bac4;
+}
+.home{background-position: 0 0;border-left: 1px solid #b0bac4;}
+.enjoy{background-position: -100px 0;}
+.college{background-position: -200px 0;}
+.trade{background-position: -300px 0;}
+.purchase{background-position: -400px 0;}
+
+.header_b{
+	background-color: #004066;
+    height: 28px;
+    margin-top: -8px;
+    position: relative;
+    z-index: 3;
+}
+.wrapper{
+	width: 1180px;
+	margin: 0 auto;
+}
+.wrapper_one{
+	position: relative;
+	width: 1180px;
+	height: 490px;
+	float: left;
+	overflow: hidden;
+}
+.slide {
+	position: relative;
+	width: 7000px;
+	height: 490px;
+	
+}
+
+.slide img{width: 1180px;}
+.spanBtn b{
+	position: absolute;
+	top: 227px;
+	width: 20px;
+	height: 35px;
+	opacity: 0.75;
+	cursor: pointer;
+}
+.spanBtn .prev{
+	margin-left: 10px;
+	left: 0;
+	background: url(../images/prev.png);
+}
+.spanBtn .next{
+	margin-right: 10px;
+	right: 0;
+	background: url(../images/next.png);
+}
+.pagination {
+	list-style: none;
+	z-index:9999;
+	position: absolute;
+	bottom: 10px;
+	left:552px;
+}
+.pagination li {
+	float: left;
+	margin: 0 1px;
+}
+.pagination li a {
+	display: block;
+	width: 13px;
+	height: 0;
+	padding-top: 13px;
+	background-position: 0 0;
+	float: left;
+	overflow: hidden;
+	background-image: url(../images/circle.png);
+}  
+.pagination li.current a,.pagination li.current a:hover { 
+	background-position: -16px -0px 
+}
+.pagination li a:hover { 
+	background-position: 0px -0px 
+}
+
+.wrapper_two,.wrapper_three,.wrapper_four,.wrapper_five{
+	margin: 32px auto 0;
+}
+.title{height: 57px;}
+.title_l,.title_c,.title_r{
+	display: block;
+	float: left;
+}
+
+.title .title_l{
+	position: relative;
+	background: url(../images/title.png);
+	width: 132px;
+	height: 57px;
+	color: #004066;
+}
+.title .title_l h2{
+	position: absolute;
+	left: 15px;
+	top: 10px;
+}
+.title .title_c{
+	border: 1px solid #687693;
+	height: 0;
+	width: 80%;
+	margin: 28px 25px;
+
+}
+.title .title_r {
+	line-height: 57px;
+	color: #004066;
+	font-size: 14px;
+	font-family: "黑体";
+}
+.title a:hover{color: #f00;}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+.clearfix {
+    zoom: 1;
+}
+.Smenu2{
+    width: 100%;
+    clear: both;
+    margin-top: 20px;
+}
+.SmenuTitle{
+	margin-left: 60px;
+    border-bottom: 2px solid #eee;
+    height: 28px;
+    width: 89%;
+    position: relative;
+}
+.SmenuTitle ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+.SmenuTitle ul li{
+    float:left;
+    width: 114px;
+    text-align: center;
+    padding-bottom: 8px;
+}
+.SmenuTitleOn0{
+    background: url('../images/down-triangle.png') no-repeat scroll 0px 21px transparent;
+
+}
+.SmenuTitleOn10,.SmenuTitleOn11{
+    background: url('../images/down-triangle_green.png') no-repeat scroll 0px 23px transparent;
+
+}
+
+.SmenuTitle ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+.SmenuContent{
+    width: 100%;
+    display: inline-block;
+    margin-top: 10px;
+}
+.SmenuCont{
+    display: none;
+    margin: 40px 60px;
+}
+.SmenuCont .SmenuImg img{
+    width: 243px;
+    height: 365px;
+}
+.SmenuContentOn0{
+    display: block;
+    width: 100%;
+}
+
+.SmenuContent ul li{
+    width: 243px;
+    float: left;
+    margin-right: 25px;
+}
+.SmenuContent ul li:last-child{
+    margin-right: 0;
+}
+.SmenuContent ul li p{
+    text-align: center;
+    line-height: 27px;
+    font-size: 12px;
+    color: #8a6e5d;
+}
+
+.SmenuImg{
+    position: relative;
+}
+.SmenuCont p{
+	float: left;
+	display: block;
+	width: 100%;
+}
+.tip{
+    position: absolute;
+    width: 40px;
+    height: 26px;
+    top: 0;
+    right: 16px;
+    background: url("../images/tip.png") no-repeat;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 19px;
+}
+.border_b{
+	margin-bottom: 35px;
+	display: block;
+	height: 90px;
+	width: 243px;
+	border-bottom: 2px solid #d2d0cf;
+	border-right: 2px solid #d2d0cf;
+}
