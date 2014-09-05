@@ -1,89 +1,92 @@
-// ***bing***首页图片轮播***start***
-$(function(){
-    var $imgscroll = $('.pagination li');
-    var len = $imgscroll.length;
-    var index = 0;
-    var adTimer = null;
-    var page = 1;
-    var page2 = 0;
-    $imgscroll.mousemove(function(){
-
-        index = $imgscroll.index(this);
-        showHomePage(index);
-    }).eq(0).mouseover();
-    //用来初始化，让第一个文字高亮并显示第一张图
-
-    $('.slide').hover(function(){
-
-        if(adTimer){
-            clearInterval(adTimer);
-          }
-        },function(){
-            adTimer = setInterval(function(){
-                showHomePage(index);
-                index++;
-                if(index == len){
-                    index = 0;
-                }
-            },3000);     
-    }).trigger("mouseleave");
-
-    $(".spanBtn .next").hover(function(){
-    	clearInterval(adTimer);
-    })
-    $(".spanBtn .prev").hover(function(){
-    	clearInterval(adTimer);
-    })
-    $(".spanBtn .next").click(function(){
-        
-        var $v_out = $(this).parents("div.wrapper_one");//视频外围
-        var $v_show = $v_out.find("div.slide");//视频播放区域
-        var v_width = $v_out.width();//外围宽度
-        var page_count = $v_show.find("img").length;
-     
-	     if( page == page_count ){  
-	        $v_show.find("img").eq(0).fadeIn().siblings().fadeOut();
-	        $imgscroll.removeClass("current").eq(0).addClass("current");
-	        page = 1;
-	     }else{
-	        $imgscroll.removeClass("current").eq(page).addClass("current");
-	        $v_show.find("img").eq(page++).fadeIn().siblings().fadeOut();
-	        
-	     }
-    });
-
-    $(".spanBtn .prev").click(function(){
-        clearInterval(adTimer);
-        var $v_out = $(this).parents("div.wrapper_one");//视频外围
-        var $v_show = $v_out.find("div.slide");//视频播放区域
-        var v_width = $v_out.width();//外围宽度
-        var page_count = $v_show.find("img").length;           	
-        if (page2 == 0) { 
-        	var page2_count = page_count-1;
-            $v_show.find("img").eq(page2_count).fadeIn().siblings().fadeOut();
-            $imgscroll.removeClass("current").eq(page2_count).addClass("current");
-            page2 = page2_count;
-        }else{
-
-            $v_show.find("img").eq(--page2).fadeIn().siblings().fadeOut();
-
-            $imgscroll.removeClass("current").eq(page2).addClass("current");
+/**june***首页图片轮播***start***/
+$(document).ready(function(){
+    var num=$('.slide_span span').length;
+    var i_mun=0;
+    var timer_banner=null;
+    $('.slide_ul li:gt(0)').hide();//页面加载隐藏所有的li 除了第一个   
+//底下小图标点击切换
+    $('.slide_span span').click(function(){
+        $(this).addClass('slide_span_one')
+               .siblings('span').removeClass('slide_span_one');
+        var i_mun1=$('.slide_span span').index(this);
+        $('.slide_ul li').eq(i_mun1).fadeIn('slow')
+                               .siblings('li').fadeOut('slow');
+        i_mun=i_mun1;
+    });   
+//左边箭头点击时切换
+    $('.slide_left').click(function(){
+        if(i_mun==0){
+            i_mun=num
         }
+        //大图切换
+        $('.slide_ul li').eq(i_mun-1).fadeIn('slow')
+                                   .siblings('li').fadeOut('slow');
+        //小图切换
+        $('.slide_span span').eq(i_mun-1).addClass('slide_span_one')
+                   .siblings('span').removeClass('slide_span_one');
+        i_mun--
     });
+
+    //左边按钮移动到其上时更换背景图片
+    $('.slide_left').mouseover(function(){     
+        $('.slide_left').addClass('slide_left1');
+    });
+    //左边按钮移动到其上时还原背景图片
+    $('.slide_left').mouseout(function(){      
+        $('.slide_left').removeClass('slide_left1');
+    });
+//右边箭头点击时切换
+    $('.slide_right').click(function(){
+        move_banner()       
+    });
+    //右边按钮移动到其上时更换背景图片
+    $('.slide_right').mouseover(function(){       
+        $('.slide_right').addClass('slide_right1');
+    });
+    //右边按钮移动到其上时更换背景图片
+    $('.slide_right').mouseout(function(){       
+        $('.slide_right').removeClass('slide_right1');
+    });   
+//鼠标移动到幻灯片上时 显示左右切换案例
+    $('.slide').mouseover(function(){
+        $('.slide_left').show();
+        $('.slide_right').show();
+    });
+//鼠标离开幻灯片上时 隐藏左右切换案例
+    $('.slide').mouseout(function(){
+        $('.slide_left').hide();
+        $('.slide_right').hide();
+    });   
+    //自动播放函数
+    function bannerMoveks(){
+        timer_banner=setInterval(function(){
+            move_banner()
+        },4000)
+    };
+    bannerMoveks();//开始自动播放
+    //鼠标移动到banner上时停止播放
+    $('.slide').mouseover(function(){
+        clearInterval(timer_banner);
+    });
+    //鼠标离开 banner 开启定时播放
+    $('.slide').mouseout(function(){
+        bannerMoveks();
+    });
+//banner 右边点击执行函数
+   function move_banner(){
+            if(i_mun==num-1){
+                i_mun=-1
+            }
+            //大图切换
+            $('.slide_ul li').eq(i_mun+1).fadeIn('slow')
+                                       .siblings('li').fadeOut('slow');
+            //小图切换
+            $('.slide_span span').eq(i_mun+1).addClass('slide_span_one')
+                       .siblings('span').removeClass('slide_span_one');
+            i_mun++    
+        }
 })
-
-function showHomePage(index){
-    var $rollobj = $('.wrapper_one');
-    var $rollList = $rollobj.find(".pagination li");
-    var $rolla = $rollList.find('a');
-    var newhref = $rolla.eq(index).attr("href");
-     $('#JS_imgWrap').attr("href",newhref).find("img").eq(index).fadeIn('slow','linear').siblings().fadeOut('slow','linear');
-
-    $rollList.removeClass("current").eq(index).addClass("current");
-}
-// ***bing***首页图片轮播***end***
-
-
+/****june***首页图片轮播***end***/
 
 // 选项卡部分
 var tabOptionIndex2 = 0; 
