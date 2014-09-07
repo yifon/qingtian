@@ -118,3 +118,20 @@ $(function(){
         $(this).addClass('current_b').siblings().removeClass('current_b');
     })
 })
+
+
+/*购买数量*/ 
+$(function(){
+    var amountMinus = $('.product-minus');
+    var amountPlus = $('.product-plus');
+    amountMinus.click(function(){
+        var amount = $(this).parent().find('.product-amout-text');
+        if (amount.val() > 0) {
+            amount.val(amount.val()-1);
+        };
+    });
+     amountPlus.click(function(){
+        var amount = $(this).parent().find('.product-amout-text');
+        amount.val(Number(amount.val())+1);
+    });
+})

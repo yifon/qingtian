@@ -48,7 +48,7 @@ img{border: none;}
 .header_b{
 	background-color: #004066;
     height: 28px;   
-    line-height: 28px;
+    line-height: 28p
     margin-top: -8px;
     position: relative;
     z-index: 3;
@@ -318,7 +318,8 @@ img{border: none;}
 .SmenuContent ul li{
     width: 202px;
     float: right;
-	margin-left: 26px;
+	  margin-left: 26px;
+	  margin-bottom: 45px;
 }
 
 .SmenuContent ul li p{
@@ -348,13 +349,55 @@ img{border: none;}
     font-size: 12px;
     line-height: 19px;
 }
-.border_b{
+.detail_b{
 	margin-bottom: 35px;
-	display: block;
-	height: 90px;
+	height: 110px;
 	width: 200px;
 	border-bottom: 2px solid #d2d0cf;
 	border-right: 2px solid #d2d0cf;
+}
+	/* 购买数量 */
+.purchase-warp {
+	position: relative;
+	font-size: 12px;
+	margin-top: -67px;
+	margin-left: 10px;
+}
+.product-amount a,.product-amount input{
+	display: block;
+	float: left;
+	border:1px solid #88c0fb;
+	margin-right: 10px;
+	margin-top: 6px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 12px;
+}
+.product-minus,.product-plus {
+	width: 12px;
+	height: 12px;
+	margin-top: 6px;
+	text-decoration: none;
+}
+.product-amount input {
+	width: 20px;
+	margin-top: 4px;
+}
+.purchase-btn a {
+	display: inline-block;
+	float: left;
+	width: 100px;
+	height: 24px;
+	background: #88c0fb;
+	color: #fff;
+	text-align: center;
+	line-height: 25px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.purchase-btn a:hover {
+	background: #4e90e7;
 }
 
 /*晴天学院*/
@@ -551,3 +594,36 @@ img{border: none;}
 	background:#000 url(../images/ad_ctr.png) no-repeat -3px -90px;
 }
 /*首页图片轮播***june***end*/
+
+
+/* 花语 */
+.floralLanguage {
+	position: relative;
+	margin-left: 50px;
+}
+.flower .img2 {
+	margin-left: -4px;
+}
+.flowerTitle {
+	position: absolute;
+	top: 115px;
+	left: 540px;
+}
+
+.smallShow {
+	width: 350px;
+	padding: 20px 0 0 20px;
+	float: left;
+}
+.showText {
+	width: 500px;
+	height: 157px;
+	padding: 60px 0 0 70px;
+	margin-left: 100px;
+	float: left;
+	color: #88c0fb;
+	font-size: 12px;
+	line-height: 25px;
+	letter-spacing: 2px;
+	background:url(../images/floralLanguage.jpg) no-repeat;
+}
