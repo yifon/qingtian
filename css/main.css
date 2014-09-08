@@ -59,7 +59,11 @@ img{border: none;}
 .header_b a{color: #fff;}
 .header_b a:hover{color: #f00;}
 .header_b .login a{padding: 0 8px;}
-.header_b a img{margin-right: 4px;}
+.header_b .cart_img{
+	margin-right: 4px;
+	top: 2px;
+	position: relative;
+}
 .header_b span{margin-right: 25px;}
 
 /*.search{
@@ -988,66 +992,11 @@ img#left_picture {
 	font-size: 12px;
 	color: #666; 
 }
-
 .price_place{
 	width: 548px;
 	height: 104px;
 	background-color: #0064a6;
 	margin-top: 17px;
-}
-.price{
-	height: 76px;
-	width: 548px;
-	background: url(../images/icon/price_bg.png) no-repeat;
-}
-
-.p-price{
-	height: 52px;
-}
-
-.price #cuxiao{
-	padding: 23px 18px 0 24px;
-	color: #fff;
-	float: left;
-}
-
-#price2 {
-	font-size: 36px;
-	color: #fff;
-	font-weight: bold;
-	font-family: Arial;
-	margin-top: 18px;
-	width: 150px;
-	height: 29px;
-	float: left;
-}
-
-#one_price{
-	color: #D4F9DB;
-	margin-left: 82px;
-
-}
-#activity_price{
-	background: url(../images/icon/activity_price.png) no-repeat;
-	width: 57px;
-	height: 20px;
-	color: #626262;
-	display: block;
-	float: left;
-	text-align: center;
-	margin:11px 0 0 ;
-}
-.place{
-	margin-left: 82px;
-	
-}
-.place p{
-	color: #fff;
-	line-height: 28px;
-}
-img.o-place {
-	cursor: pointer;
-	margin-right: 3px;
 }
 .detail{
 	margin-left: 9px;
@@ -1063,9 +1012,7 @@ img.o-place {
 }
 .weight p{
 	line-height:36px;
-
 }
-
 .detail_info{
 	height: 83px;
 	border-bottom: 1px solid #DADADA;
@@ -1601,6 +1548,11 @@ div.zoomMask {
 }
 #cart_table .pro_icon{
 	width:65px;
+	height: 65px;
+}
+.pro_icon img{
+	width: 65px;
+	height: 65px;
 }
 #cart_table .cart_click{
 	color:#333;
@@ -1678,11 +1630,9 @@ div.zoomMask {
 }
 #pro-1 .ass_detail{
 	height: 100px;
-	width: 930px;
 	background: url(../images/icon/acc_bg.png);
-	border-top: 1px solid #58af2b;
+	border-top: 1px solid #0064a6;
 	border-bottom: 1px solid #ccc;
-	margin-top: 1px;
 	z-index: 1;
 }
 #pro-1 .show_PR{
@@ -1752,7 +1702,7 @@ div.zoomMask {
 #pro-1 .ass_says{
 	color: #666;
 	font-size: 12px;
-	margin-top: 20px;
+	margin-top: 0px;
 	padding: 10px;
 	clear: both;
 }
@@ -1811,6 +1761,9 @@ color: #777;
 }
 #pro-2 .deal_table{
 	width: 930px;
+}
+.right_div_table{
+	border-top: 1px solid #0064a6;
 }
 #pro-2 .deal_table td{
 	text-align: center;
@@ -1888,4 +1841,78 @@ color: #777;
 	left: 7px;
 	top: 13px;
 }
+.account-num{
+	float: left;
+	margin-top: 20px;
+	margin-left: 16px;
+}
+.num-option{
+	float: left;
+	width: 21px;
+	height: 28px;
+	text-align: center;
+	background:#efefef url(../image/alick.gif) repeat-x;
+	vertical-align: middle;
+	line-height:28px;
+	color:#0064a6;
+	border-radius: 4px;
+	box-shadow: 2px 11px 5px #ddd inset, 1px 1px 1px #ddd;
+	font-size: 30px;
+	font-weight: bold;
+	border:solid 1px #a7a6ab;
+	cursor: pointer;
+}
+.num-option:hover{
+	background:url(../images/icon/alick.gif) 0 -28px repeat-x; 
+	color:#004066;
+}
+input.num-each{
+	 background: none repeat scroll 0 0 #fff;
+    border-radius: 4px;
+    box-shadow: 2px 11px 5px #ddd inset, 1px 1px 1px #ddd;
+    float: left;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 3px;
+    padding: 0 2px;
+    text-align: center;
+    vertical-align: middle;
+    width: 35px;
+}
 /********产品详情页product.html******june*****end*/
+/*分页样式*/
+._page_{
+	width:300px;
+	height:30px;
+	margin:30px auto;
+
+}
+._page_ ul li{
+	width: 28px;
+	height: 28px;
+	color: #717171;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 28px;
+	margin-right: 2px;
+	float: left;
+	cursor: pointer;
+}
+._page_ .up_page,
+._page_ .down_page{
+	width: 65px;
+}
+._page_ .up_page img,
+._page_ .down_page img{
+	vertical-align: text-bottom;
+}
+._page_ .current_page{
+	border: 0;
+	color: #149d0e;
+	font-size: 15px;
+	font-family: "Arial";
+	font-weight: bold;
+	margin-top: 2px;
+}
