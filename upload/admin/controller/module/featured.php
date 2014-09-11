@@ -9,12 +9,18 @@ class ControllerModuleFeatured extends Controller {
 		
 		$this->load->model('setting/setting');
 				
-		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {			
-			$this->model_setting_setting->editSetting('featured', $this->request->post);		
+		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+			$data = $this->request->post;
+			$data['featured_product'] = array_values($data['featured_product']);	
+			$this->model_setting_setting->editSetting('featured', $data);		
 			
 			$this->session->data['success'] = $this->language->get('text_success');
+
+			echo '<pre>';
+			print_r($data);
+			echo '</pre>';
 			
-			$this->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL'));
+			// $this->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL'));
 		}
 				
 		$this->data['heading_title'] = $this->language->get('heading_title');
@@ -81,29 +87,78 @@ class ControllerModuleFeatured extends Controller {
 			$this->data['featured_product'] = $this->request->post['featured_product'];
 		} else {
 			$this->data['featured_product'] = $this->config->get('featured_product');
-		}	
+		}
+
+		echo '<pre>';
+		print_r($this->data['featured_product']);
+		echo '</pre>';	
 				
 		$this->load->model('catalog/product');
 				
-		if (isset($this->request->post['featured_product'])) {
-			$products = explode(',', $this->request->post['featured_product']);
-		} else {		
-			$products = explode(',', $this->config->get('featured_product'));
+		// if (isset($this->request->post['featured_product'])) {
+		// 	$products = explode(',', $this->request->post['featured_product']);
+		// } else {		
+		// 	$products = explode(',', $this->config->get('featured_product'));
+		// }
+		
+		// $this->data['products'] = array();
+		$this->data['tabs'] = array();
+		
+		//categories
+		$this->data['entry_category']=$this->language->get('entry_category');
+		$this->load->model('catalog/category');
+		$this->data['categories']=$this->model_catalog_category->getStoreCategories();
+		//products
+		$sps=$this->model_catalog_product->getStoreProducts();
+		$p=array();
+		foreach($sps as $sp){
+			$p2cs=$this->model_catalog_product->getProductCategories($sp['product_id']);
+			$p[]=array(
+				'product_id'=>$sp['product_id'],
+				'name'=>$sp['name'],
+				'categories'=>$p2cs
+			);
 		}
+		$this->data['options']=json_encode($p);
 		
-		$this->data['products'] = array();
-		
-		foreach ($products as $product_id) {
-			$product_info = $this->model_catalog_product->getProduct($product_id);
+		// foreach ($products as $product_id) {
+		// 	$product_info = $this->model_catalog_product->getProduct($product_id);
 			
-			if ($product_info) {
-				$this->data['products'][] = array(
-					'product_id' => $product_info['product_id'],
-					'name'       => $product_info['name']
-				);
+		// 	if ($product_info) {
+		// 		$this->data['products'][] = array(
+		// 			'product_id' => $product_info['product_id'],
+		// 			'name'       => $product_info['name']
+		// 		);
+		// 	}
+		// }
+		
+		if ($this->data['featured_product'] == null) {
+			$this->data['tabs'][] = array('title' => '', 'products'=>array());
+		} else {
+			foreach ($this->data['featured_product'] as $value) {
+
+				$tmp = array();
+				if(!empty($value['products']) ){
+					$products = explode(',', $value['products']);
+					foreach ($products as $product_id) {
+						$product_info = $this->model_catalog_product->getProduct($product_id);
+						$tmp[] =array('product_id' 	=> $product_info['product_id'],
+									  'name'		=> $product_info['name']
+						);
+					}					
+				}
+				$this->data['tabs'][] = array('title' => $value['title'],
+											  'products'	=> $tmp	
+					);
 			}
-		}	
-			
+		}
+
+	
+		
+		// echo '<pre>';
+		// print_r($this->data['tabs']);
+		// echo '</pre>';
+
 		$this->data['modules'] = array();
 		
 		if (isset($this->request->post['featured_module'])) {
