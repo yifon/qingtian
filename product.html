@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9,IE=10">
     <link rel="stylesheet" type="text/css" href="css/main.css" >
     <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/main.js"></script>
     <script type="text/javascript" src="js/jquery.imagezoom.min.js"></script>
   </head>
   <body>
@@ -48,7 +49,7 @@
     <div class="header_b">
         <div class="myspan">    
           <span class="login"><a href="#">登录</a>|<a href="#">注册</a></span>
-          <span><a href="#"><img src="images/cart.png" alt="购物车">购物车（0）</a></span>
+          <span><a href="#"><img src="images/icon/cart1.png" class="cart_img" alt="购物车">购物车（0）</a></span>
           <span><a href="#">热线电话:000000</a></span>
           <span><a href="#">在线客服</a></span>
         </div>
@@ -193,17 +194,7 @@ $(document).ready(function(){
             <p>颜色多款</p>
             <p>尺寸：2-3cm,4-5cm,5-6cm</p>
             <div class="price_place">
-              <div class="price">
-                <div class="p-price">
-                  <p id="cuxiao">促销价</p>
-                  <p id="price2">¥ 46.00</p>
-                  <span id="activity_price"><h5>活动价</h5></span>
-                </div>
-                <p id="one_price">一口价 ¥ 56.0023.33元/500g</p>
-              </div>
-              <div class="place">
-                <p>上海 至 广州<img class="o-place" src="images/icon/place.png"/> 荔湾区<img class="o-place" src="images/icon/place.png"/>     确认收货地以确保在商家销售区域</p>
-              </div>
+    
             </div>
             
             <div class="detail">
@@ -221,10 +212,6 @@ $(document).ready(function(){
                   <p class="num2">2880</p>
                   <p class="myfont">累计评价</p>
                 </div>
-                <div class="info3">
-                  <p class="num3">2880</p>
-                  <p class="myfont">赠送积分</p>
-                </div>
               </div>
               <div class="account">
                 <p class="myfont">数量</p>
@@ -241,21 +228,7 @@ $(document).ready(function(){
               </div>
               <div class="promise">
                 <p class="myfont">服务承诺</p>
-                <p class="afford_way"><a href="#"  class="pay-way">支付方式<img src="images/icon/down.png"></a></p>
               </div>
-             
-              <div class="pay-how"> <!-- 此处加入具体支付方式 默认隐藏june-->
-              <span class="cashCart"><img src="images/icon/cashCart.png" alt="支付方式图标"></span>
-                <ul  class="pay-list">
-                  <li><a href="#">信用卡分期</a></li>
-                  <li><a href="#">快捷支付</a></li>
-                  <li><a href="#">网银支付</a></li>
-                  <li><a href="#">找人支付</a></li>
-                  <li><a href="#">消费卡</a></li>
-                  <li><a href="#">网点支付</a></li>
-                  <li><a href="#">支付宝余额</a></li>
-                </ul>
-              </div><!-- 此处加入具体支付方式 默认隐藏june-->
             </div>
           </div>
         </div><!-- 左中结束 -->
@@ -571,26 +544,8 @@ $(document).ready(function(){
             <div id="pro-0" class="pro-0 proOn-0" >
              <img src="images/pro/qtxq.jpg" alt="晴天花材" class="hdst">
             </div>
-            <div id="pro-1" class="pro-0" style="border:0;">
-              <div style="margin: 20px;">
-                <ul class="proBox">
-                  <li class="proOption proOn0 pro_ass_selected"><span><a href="#pro-0">全部评论</a></span></li>
-                  <li class="proOption"><span ><a href="#pro-1">好评</a></span></li>
-                  <li class="proOption"><span ><a href="#pro-2">中评</a></span></li>
-                  <li class="proOption"><span><a href="#pro-3">差评</a></span></li>
-                </ul>
-                <div class="ass_detail">
-                  <div style="overflow: hidden;">
-                   <div class="show_PR">
-                    <span>84%</span><br>
-                    好评率
-                    </div>
-                    <div class="classify_ass">lalalal</div>
-                    <div class="want_ass">
-                      购买此商品，订单签收后即可发表评论，成功发表一条评论，即获10积分！
-                      <div class="want_ass_btn">我要评价</div>
-                    </div>
-                  </div>
+            <div id="pro-1" class="pro-0">              
+                <div class="ass_detail">      
                   <div class="ass_contt">
                     <div style="overflow: hidden;">
                       <div class="fl ass_user"><img src="images/ass_user.png">酒暖回忆思念<span class="fr">说</span></div>
@@ -600,113 +555,7 @@ $(document).ready(function(){
                       <div class="ass_says">&nbsp;&nbsp;打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，
                       </div>
                     </div>
-                  </div>
-                  <div class="lineout" >
-                      <div class="fl re_ass_user"><span>1楼</span><br>秋秋</div>
-                    <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                    </div>
-                    <div class="re_ass_says">&nbsp;非常的不错.我也买过.挺好的推荐
-                    </div>
-                  </div>
-                  <div style="clear:both;margin-top: 10px;">
-                    <div class="re_ass_btn">回复评论</div>
-                    <div class="re_ass_bell">&nbsp;</div>
-                  </div>
-                  <div class="ass_contt">
-                    <div style="overflow: hidden;">
-                      <div class="fl ass_user"><img src="images/ass_user.png">酒暖回忆思念<span class="fr">说</span></div>
-                      <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                      </div>
-                      <div class="ass_says">&nbsp;&nbsp;打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，
-                      </div>
-                    </div>
-                  </div>
-                  <div class="lineout">
-                      <div class="fl re_ass_user"><span>1楼</span><br>秋秋</div>
-                    <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                    </div>
-                    <div class="re_ass_says">&nbsp;非常的不错.我也买过.挺好的推荐
-                    </div>
-                  </div>
-                  <div style="clear:both;margin-top: 10px;">
-                    <div class="re_ass_btn">回复评论</div>
-                    <div class="re_ass_bell">&nbsp;</div>
-                  </div>
-                  <div class="ass_contt">
-                    <div style="overflow: hidden;">
-                      <div class="fl ass_user"><img src="images/ass_user.png">酒暖回忆思念<span class="fr">说</span></div>
-                      <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                      </div>
-                      <div class="ass_says">&nbsp;&nbsp;打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，
-                      </div>
-                    </div>
-                  </div>
-                  <div class="lineout">
-                      <div class="fl re_ass_user"><span>1楼</span><br>秋秋</div>
-                    <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                    </div>
-                    <div class="re_ass_says">&nbsp;非常的不错.我也买过.挺好的推荐
-                    </div>
-                  </div>
-                  <div class="lineout">
-                      <div class="fl re_ass_user"><span>2楼</span><br>秋秋</div>
-                    <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                    </div>
-                    <div class="re_ass_says">&nbsp;非常的不错.我也买过.挺好的推荐
-                    </div>
-                  </div>
-                  <div style="clear:both;margin-top: 10px;">
-                    <div class="re_ass_btn">回复评论</div>
-                    <div class="re_ass_bell">&nbsp;</div>
-                  </div>
-                  <div class="ass_contt">
-                    <div style="overflow: hidden;" >
-                      <div class="fl ass_user"><img src="images/ass_user.png">酒暖回忆思念<span class="fr">说</span></div>
-                      <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                      </div>
-                      <div class="ass_says">&nbsp;&nbsp;打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，
-                      </div>
-                    </div>
-                  </div>
-                  <div  class="lineout">
-                      <div class="fl re_ass_user"><span>1楼</span><br>秋秋</div>
-                    <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                    </div>
-                    <div class="re_ass_says">&nbsp;非常的不错.我也买过.挺好的推荐
-                    </div>
-                  </div>
-                  <div style="clear:both;margin-top: 10px;">
-                    <div class="re_ass_btn">回复评论</div>
-                    <div class="re_ass_bell">&nbsp;</div>
-                  </div>
-                  <div class="ass_contt">
-                    <div style="overflow: hidden;">
-                      <div class="fl ass_user"><img src="images/ass_user.png">酒暖回忆思念<span class="fr">说</span></div>
-                      <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                      </div>
-                      <div class="ass_says">&nbsp;&nbsp;打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，
-                      </div>
-                    </div>
-                  </div>
-                  <div class="lineout">
-                      <div class="fl re_ass_sys">亲爱的用户您好，诚挚感谢反馈！对于您未能体验满意商品而深表歉意。由于受夏季高温影响，带有生命力的蔬果商品，因为时间、温度等方面所带来的衰变有时确实无法控制，我们会将信息改感谢您的理解与支持！</div>
-                    <div class="fr ass_time">
-                        2013-07-28 10:59:21
-                    </div>
-                  </div>
-                  <div style="clear:both;margin-top: 10px;">
-                    <div class="re_ass_btn">回复评论</div>
-                    <div class="re_ass_bell">&nbsp;</div>
-                  </div>
+                  </div> 
                   <div class="_page_">
                     <ul>
                       <li class="up_page"><a><img src="images/icon/PgUp.png">上一页</a></li>
@@ -718,11 +567,10 @@ $(document).ready(function(){
                       <li class="down_page"><a>下一页<img src="images/icon/PgDn.png"></a></li>
                     </ul>
                  </div>
-                </div>
               </div>
             </div>
             <div id="pro-2" class="pro-0">
-              <div class="right_div_table" style="margin: 30px;">
+              <div class="right_div_table">
                 <table class="tb_th">
                   <tr>
                     <th style="width: 120px;">买家</th>
