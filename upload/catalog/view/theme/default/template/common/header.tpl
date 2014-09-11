@@ -59,4 +59,3 @@
       </div>
       <!-- header部分结束 -->
       </div>
-    <div class="wrapper">

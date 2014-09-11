@@ -54,7 +54,7 @@ class ControllerModuleFeatured extends Controller {
 						$rating = false;
 					}
 						
-					$tmp['products'] = array(
+					$tmp['products'][] = array(
 						'product_id' => $product_info['product_id'],
 						'thumb'   	 => $image,
 						'name'    	 => $product_info['name'],
@@ -71,9 +71,9 @@ class ControllerModuleFeatured extends Controller {
 
 		}
 
-		echo '<pre>';
-		print_r($this->data['tabs']);
-		echo '</pre>';
+		// echo '<pre>';
+		// print_r($this->data['tabs']);
+		// echo '</pre>';
 
 		// if (empty($setting['limit'])) {
 		// 	$setting['limit'] = 5;
@@ -122,13 +122,13 @@ class ControllerModuleFeatured extends Controller {
 		// 	}
 		// }
 
-		// if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/featured.tpl')) {
-		// 	$this->template = $this->config->get('config_template') . '/template/module/featured.tpl';
-		// } else {
-		// 	$this->template = 'default/template/module/featured.tpl';
-		// }
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/featured.tpl')) {
+			$this->template = $this->config->get('config_template') . '/template/module/featured.tpl';
+		} else {
+			$this->template = 'default/template/module/featured.tpl';
+		}
 
-		// $this->render();
+		$this->render();
 	}
 }
 ?>

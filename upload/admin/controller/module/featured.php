@@ -16,11 +16,11 @@ class ControllerModuleFeatured extends Controller {
 			
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			echo '<pre>';
-			print_r($data);
-			echo '</pre>';
+			// echo '<pre>';
+			// print_r($data);
+			// echo '</pre>';
 			
-			// $this->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL'));
+			$this->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL'));
 		}
 				
 		$this->data['heading_title'] = $this->language->get('heading_title');
@@ -89,9 +89,9 @@ class ControllerModuleFeatured extends Controller {
 			$this->data['featured_product'] = $this->config->get('featured_product');
 		}
 
-		echo '<pre>';
-		print_r($this->data['featured_product']);
-		echo '</pre>';	
+		// echo '<pre>';
+		// print_r($this->data['featured_product']);
+		// echo '</pre>';	
 				
 		$this->load->model('catalog/product');
 				
