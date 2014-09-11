@@ -135,3 +135,276 @@ $(function(){
         amount.val(Number(amount.val())+1);
     });
 })
+
+/*************/
+ /*悬浮购物车*/
+ $(function() {
+     $(".count").each(function() {
+         var $reduce = $(this).children('.cart_reduce');
+         var $countInput = $(this).children('input');
+         var $add = $(this).children('.cart_add');
+         $add.click(function() {
+             //绑定添加按钮事件
+             var val = parseInt($countInput.val()) + 1;
+             $countInput.val(val);
+             getTotal()
+         });
+
+         $reduce.click(function() {
+             //绑定减少按钮事件
+             var val = parseInt($countInput.val()) - 1;
+             if (val < 1) {
+                 val = 1;
+             }
+             $countInput.val(val);
+             getTotal()
+         })
+     })
+
+     function getTotal() {
+         //设置总价
+         var $items = $("#cart_table").find("tr");
+         var $item;
+         var len = $items.length;
+         var num, price, total = 0,
+             totalNum = 0;
+         for (var i = 0; i < len; i++) {
+             $item = $items.eq(i);
+             num = $item.find("input.count_input").val();
+             price = $item.find("div.cart_click").find("em").text();
+             total += num * price;
+             totalNum += parseInt(num);
+         }
+         total = total.toFixed(2);
+         $("#pro_num").text(totalNum);
+         $("#pro_count").text(totalNum);
+         $("#priceTotal").text("￥" + total);
+         $("#priceAll").text("￥" + total);
+         return total;
+
+     }
+
+     $(".cart_delete").children("img").click(function() {
+         var c = confirm("确定删除？");
+         if (c == false) {
+             return;
+         }
+         $(this).parents("tr").remove();
+         getTotal();
+         isEmpty();
+     })
+
+     $("#cart_icon").click(function() {
+         showCart();
+     })
+     getTotal();
+ })
+
+ function closeCart() {
+     $("#cart").hide();
+ }
+
+ function showCart() {
+     isEmpty();
+     $("#cart").show();
+ }
+
+ function isEmpty() {
+     var num = $("#cart_table").find("tr").length;
+     if (num > 0) {
+         $("#cart").show();
+         $("#fullcart").show();
+         $("#emptycart").hide();
+     } else {
+         $("#cart").show();
+         $("#fullcart").hide();
+         $("#emptycart").show();
+     }
+ }
+ /********首页购物车加减***************************june*/
+ /*$(function(){
+   $(".num-each").each(function(index){ //取得整个页面的input值
+$(this).attr("value","0");
+ }); 
+})
+ */
+ $(function() {
+     $(".num-option").click(function() {
+         var num = 0;
+         num = $(this).parent().find(".num-each").val();
+         num = parseInt(num, 10);
+         if ($(this).hasClass("minus")) {
+             if (num >= 1) {
+                 num--;
+             }
+         } else {
+             //缺少获取仓库的数量
+             num++;
+         }
+         $(this).parent().find(".num-each").val(num);
+     })
+ })
+ function getBuyNum(target) {
+     var num = $(target).next(".buyNum").find(".num-each").val();
+     num = parseInt(num, 10);
+     return num;
+ }
+ /******************首页购物车加减******june*****end******************/
+ /***产品详情页中图片预览向左向右轮播部分*****june*******start****/
+$(function(){
+    var page = 1;
+    var i = 5; //每版放5个图片
+    // 点击向后按钮
+    $("#right-choice").click(function(){
+        var $parent = $(this).parents("div.left_banner");//寻找当前元素的父元素
+        var $v_out = $parent.find("div.i-list");//视频外围
+        var $v_show = $parent.find("div.i-bot-list");//视频播放区域
+        var v_width = $v_out.width();//外围宽度
+        var len = $v_show.find("li").length; //图片数量
+        var page_count = Math.ceil(len / i) ; //页面数目
+         if( !$v_show.is(":animated") ){    //判断“视频内容展示区域”是否正在处于动画
+              if( page == page_count ){  //已经到最后一个版面了,如果再向后，必须跳转到第一个版面。
+                $v_show.animate({ left : '0px'}, "slow"); //通过改变left值，跳转到第一个版面
+                page = 1;
+              }else{
+                $v_show.animate({ left : '-='+(v_width-38)}, "slow");  //通过改变left值，达到每次换一个版面
+                page++;
+             }
+         }
+    });
+    //点击向前按钮
+    $("#left-choice").click(function(){
+        var $parent = $(this).parents("div.left_banner");
+        var $v_out = $parent.find("div.i-list");
+        var $v_show = $parent.find("div.i-bot-list");
+        var v_width = $v_out.width();
+        var len = $v_show.find("li").length;
+        var page_count = Math.ceil(len / i);
+        if(!$v_show.is(":animated")){
+            if (page == 1) {
+                $v_show.animate({left : "-="+(v_width-37)*(page_count-1)},"slow");
+                page = page_count;
+            }else{
+                $v_show.animate({left : '+='+(v_width-36)},"slow");
+                page--;
+            }
+        }
+    });
+})
+/***产品详情页中图片预览向左向右轮播部分*****june*********end*****/
+/*********************** 产品详情页“搭配、套餐”的切换******june******start*/
+ var tabOptionIndex4 = 0;
+ $(function() {
+     $(".daOption span").mouseover(function() {
+         tabOptionIndex4 = $(".daOption span").index(this);
+         tabOptionHover4(tabOptionIndex4);
+     });
+ });
+ function tabOptionHover4(tabOptionIndex) {
+     var  $li_4 = $(".daOption");
+     for (var i = 0; i < $li_4.length; i++) {
+         $li_4.eq(tabOptionIndex).addClass('daOn0').siblings().removeClass('daOn0');
+         $(".da-0").eq(tabOptionIndex).addClass('daOn-0').siblings().removeClass('daOn-0');
+     }
+ }
+ /*********************** 产品详情页“搭配、套餐”的切换******june******end*/
+  /*********************** 产品详情页“商品详情、评价、成交记录”的切换******june******start*/
+ var tabOptionIndex5 = 0;
+ $(function() {
+     $(".proOption span").mouseover(function() {
+         tabOptionIndex5 = $(".proOption span").index(this);
+         tabOptionHover5(tabOptionIndex5);
+     });
+ });
+ function tabOptionHover5(tabOptionIndex) {
+     var $li_5 = $(".proOption");
+     for (var i = 0; i < $li_5.length; i++) {
+         $li_5.eq(tabOptionIndex).addClass('proOn0').siblings().removeClass('proOn0');
+         $(".pro-0").eq(tabOptionIndex).addClass('proOn-0').siblings().removeClass('proOn-0');
+     }
+ }
+ /*********************** 产品详情页“商品详情、评价、成交记录”的切换******june******end*/
+ /***********首页最顶端图片向左向右切换**********bing********start************/
+$(function(){
+    var page = 1;
+    var i = 3; //每版放3个图片
+
+    // 点击向后按钮
+    $("#next_pic").click(function(){
+        var $parent = $(this).parents("div.jscroll");//寻找当前元素的父元素
+        var $v_out = $parent.find("div.o-list");//视频外围
+        var $v_show = $parent.find("div.v-bot-list");//视频播放区域
+        var v_width = $v_out.width();//外围宽度
+        var len = $v_show.find("li").length; //图片数量
+        var page_count = Math.ceil(len / i) ; //页面数目
+         if( !$v_show.is(":animated") ){    //判断“视频内容展示区域”是否正在处于动画
+              if( page == page_count ){  //已经到最后一个版面了,如果再向后，必须跳转到第一个版面。
+                $v_show.animate({ left : '0px'}, "slow"); //通过改变left值，跳转到第一个版面
+                page = 1;
+              }else{
+                $v_show.animate({ left : '-='+v_width }, "slow");  //通过改变left值，达到每次换一个版面
+                page++;
+             }
+         }
+
+    });
+
+    //点击向前按钮
+    $("#prev_pic").click(function(){
+        var $parent = $(this).parents("div.jscroll");
+        var $v_out = $parent.find("div.o-list");
+        var $v_show = $parent.find("div.v-bot-list");
+        var v_width = $v_out.width();
+        var len = $v_show.find("li").length;
+        var page_count = Math.ceil(len / i);
+        if(!$v_show.is(":animated")){
+            if (page == 1) {
+                $v_show.animate({left : "-="+v_width*(page_count-1)},"slow");
+                page = page_count;
+            }else{
+                $v_show.animate({left : '+='+v_width},"slow");
+                page--;
+            }
+        }
+    });
+
+    $("#img1").click(function(){
+
+        var $parent = $(this).parents("div.right_product");
+        var $v_out = $parent.find("div.pro");
+        var $v_show = $parent.find("div.pro2");
+        var v_height = $v_out.height();
+        var len = $v_show.find("li").length;
+        var page_count = Math.ceil(len / i);
+        if(!$v_show.is(":animated")){
+            if(page==page_count){
+                 $v_show.animate({top : '0px'},"slow");
+                page=1;
+            }else{
+                 $v_show.animate({top : '-='+v_height},"slow");
+                page++;
+            }
+        }
+    });
+
+      $("#img2").click(function(){
+        var $parent = $(this).parents("div.right_product");
+        var $v_out = $parent.find("div.pro");
+        var $v_show = $parent.find("div.pro2");
+        var v_height = $v_out.height();
+        var len = $v_show.find("li").length;
+        var page_count = Math.ceil(len / i);
+        if(!$v_show.is(":animated")){
+            if(page==1){
+                 $v_show.animate({top :  "-="+v_height*(page_count-1)},"slow");
+                page=page_count;
+            }else{
+                 $v_show.animate({top : '+='+v_height},"slow");
+                page--;
+            }
+        }
+    });
+
+})
+/***********首页最顶端图片向左向右切换**********bing********end************/
+
