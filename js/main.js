@@ -406,5 +406,99 @@ $(function(){
     });
 
 })
-/***********首页最顶端图片向左向右切换**********bing********end************/
 
+
+// 收缩--产品列表
+ $(function() {
+     $('.current2').find('h4').toggle(function() {
+         var $parent = $(this).parents('.current2');
+         var $dips = $parent.find('.current_list');
+         $dips.css("display", "none");
+         $parent.find('h4').css("background", "url(./images/icon/listup.png)");
+     }, function() {
+         var $parent = $(this).parents('.current2');
+         var $dips = $parent.find('.current_list');
+         $dips.css("display", "block");
+         $parent.find('h4').css("background", "url(./images/icon/listdown.png)");
+     });
+ })
+
+// b***产品列表页底部图片切换***start****
+$(function(){
+
+    var page = 1;
+    var i = 5; //每版放5个图片
+
+    $('#bot_prev').click(function(){
+        var $parent = $(this).parents("div.pro_bottom_pic01");
+        var $v_out = $parent.find("div.proBot_slide0");
+        var $v_show = $parent.find("div.proBot_slide01");
+        var v_width = $v_out.width();
+        var len = $v_show.find("li").length;
+        var page_count = Math.ceil(len / i);
+        if(!$v_show.is(":animated")){
+            if (page == 1) {
+                $v_show.animate({left : "-="+v_width*(page_count-1)},"slow");
+                page = page_count;
+            }else{
+                $v_show.animate({left : '+='+v_width},"slow");
+                page--;
+            }
+        }
+    });
+
+
+    $('#bot_Next').click(function(){
+        var $parent = $(this).parents("div.pro_bottom_pic01");//寻找当前元素的父元素
+        var $v_out = $parent.find("div.proBot_slide0");//视频外围
+        var $v_show = $parent.find("div.proBot_slide01");//视频播放区域
+        var v_width = $v_out.width();//外围宽度
+        var len = $v_show.find("li").length; //图片数量
+        var page_count = Math.ceil(len / i) ; //页面数目
+         if( !$v_show.is(":animated") ){    //判断“视频内容展示区域”是否正在处于动画
+              if( page == page_count ){  //已经到最后一个版面了,s如果再向后，必须跳转到第一个版面。
+                $v_show.animate({ left : '0px'}, "slow"); //通过改变left值，跳转到第一个版面
+                page = 1;
+              }else{
+                $v_show.animate({ left : '-='+v_width }, "slow");  //通过改变left值，达到每次换一个版面
+                page++;
+             }
+         }
+    });
+}) 
+
+/**********产品列表页排序**************start***/
+$(function(){
+ $('.sort-item').live('click',function() {
+        var $span = $(this).find('span');
+         if ($span.hasClass("sort-up")){
+            $span.removeClass("sort-up");
+            $span.addClass("sort-down");
+         }
+         else
+         {
+            $span.removeClass("sort-down");
+            $span.addClass("sort-up");
+         }
+});   
+})
+
+// *****登录、注册选项卡*****bing****start****
+ 
+  var tabOptionIndex8 = 0;
+ $(function() {
+     $(".TmenuTitle ul li").mouseover(function() {
+         tabOptionIndex8 = $(".TmenuTitle ul li").index(this);
+         tabOptionHover8(tabOptionIndex8);
+     });
+
+ });
+ function tabOptionHover8(tabOptionIndex) {
+     var $li_8 = $(".TmenuTitle ul li");
+     for (var i = 0; i < $li_8.length; i++) {
+         $li_8.eq(tabOptionIndex).addClass('TmenuTitleOn0 fontcolor').siblings().removeClass('TmenuTitleOn0 fontcolor');
+         $(".TmenuCont").eq(tabOptionIndex).addClass('TmenuContentOn0').siblings().removeClass('TmenuContentOn0');
+     }
+ }
+
+// *****登录、注册选项卡*****bing****end****
