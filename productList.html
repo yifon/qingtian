@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+    <title>产品列表页</title>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=10">
+    <link rel="stylesheet" type="text/css" href="css/main.css" >
+    <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.imagezoom.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header_t">
+        <div class="logo">
+          <img id="logo_t" src="images/logo.png" alt="晴天永生花">
+          <img id="lace" src="images/lace.png">
+        </div>
+        <div class="nav">
+          <a href="#">
+            <span class="home"></span>
+          </a>
+          <a href="#">
+            <span class="enjoy"></span>
+          </a>
+          <a href="#">
+            <span class="college"></span>
+          </a>
+          <a href="#">
+            <span class="trade"></span>
+          </a>
+          <a href="#">
+            <span class="purchase"></span>
+          </a>
+        </div>
+
+          <!-- 搜索栏 -->
+        <div class="searchdiv">
+          <form class="searchform" method="get"> 
+           <input class="search-submit" type="submit" value=""/>
+           <input id="search-input" class="search-input" type="text" name="" size="30px" />
+           <input  type="submit"  class="search-button" id="search-button" value="搜 索" />
+          </form>       
+        </div>
+        <div class="clear"></div>
+      
+      </div>
+      <div class="header_b">
+        <div class="myspan">    
+          <span class="login"><a href="#">登录</a>|<a href="#">注册</a></span>
+          <span><a href="#"><img src="images/icon/cart1.png" class="cart_img" alt="购物车">购物车（0）</a></span>
+          <span><a href="#">热线电话:000000</a></span>
+          <span><a href="#">在线客服</a></span>
+        </div>
+      </div>
+      <!-- header部分结束 -->
+    </div>
+    <!-- 内容区域 -->
+    <div id="content" class="content">
+      <div class="breadcrumb">
+        <div><img src="images/icon/house.png" /></div>
+        <a href="#">全部分类</a>
+        &gt;
+        <a href="#">搜索“佛手瓜”</a>
+      </div>
+        <!-- 所有分类 -->
+        <div class="pro_course">
+          <!-- 左侧栏 -->
+          <div class="pro_left list_left_list" >
+            <div class="pro_left_01">
+                <h2>所有分类</h2>
+                <div class="current2">
+                  <h4>蔬菜类</h4>
+                  <div class="current_list">
+                      <ul>
+                        <li><a href="#">多美鲜瑞士大</a></li>
+                        <li><a href="#">佛手瓜</a></li>
+                        <li><a href="#">美鲜瑞士大</a></li>
+                        <li><a href="">青新鲜大白菜</a></li>
+                        <li><a href="">进口蔬菜</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="current2">
+                  <h4>蔬菜类</h4>
+                  <div class="current_list">
+                    <div style="padding: 10px;overflow: hidden;">
+                      <ul>
+                        <li><a href="#">多美鲜瑞士大</a></li>
+                        <li><a href="#">佛手瓜</a></li>
+                        <li><a href="#">美鲜瑞士大</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="current2">
+                  <h4>瓜果类</h4>
+                  <div class="current_list">
+                    <div style="padding: 10px;overflow: hidden;">
+                      <ul>
+                        <li><a href="#">多美鲜瑞士大</a></li>
+                        <li><a href="#">佛手瓜</a></li>
+                        <li><a href="#">美鲜瑞士大</a></li>
+                        <li><a href="">青新鲜大白菜</a></li>
+                        <li><a href="">进口蔬菜</a></li>
+                        <li><a href="">彩椒</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="current2">
+                  <h4>蔬菜类</h4>
+                  <div class="current_list">
+                    <div style="padding: 10px;overflow: hidden;">
+                      <ul>
+                        <li><a href="#">多美鲜瑞士大</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="current2">
+                  <h4>蔬菜类</h4>
+                  <div class="current_list">
+                    <div style="padding: 10px;overflow: hidden;">
+                      <ul>
+                        <li><a href="#">多美鲜瑞士大</a></li>
+                        <li><a href="#">佛手瓜</a></li>
+                        <li><a href="#">美鲜瑞士大</a></li>
+                        <li><a href="">青新鲜大白菜</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="current2">
+                  <h4>蔬菜类</h4>
+                  <div class="current_list">
+                    <div style="padding: 10px;overflow: hidden;">
+                      <ul>
+                        <li><a href="#">多美鲜瑞士大</a></li>
+                        <li><a href="#">佛手瓜</a></li>
+                        <li><a href="#">美鲜瑞士大</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- 左侧栏热销榜 -->
+            <div class="left_list pro_clear" >
+                <div class="list_title">热销榜</div>
+                <div class="list_content">
+                  <div class="content_icon">
+                    <img src="images/littleIcon.jpg">
+                  </div>
+                  <div class="pro_click">
+                    <a href="">2斤59元 顺丰包 海南</a>
+                    <div class="list_price">¥ 46.00</div>
+                     
+                  </div>
+                </div>
+                <div class="list_content">
+                  <div class="content_icon">
+                      <img src="images/littleIcon.jpg">
+                  </div>
+                  <div class="pro_click">
+                    <a href="">2斤59元 顺丰包 海南</a>
+                    <div class="list_price">¥ 46.00</div>
+                     
+                  </div>
+                </div>
+                <div class="list_content">
+                  <div class="content_icon">
+                      <img src="images/littleIcon.jpg">
+                  </div>
+                  <div class="pro_click">
+                    <a href="">2斤59元 顺丰包 海南</a>
+                    <div class="list_price">¥ 46.00</div>
+                     
+                  </div>
+                </div>
+                <div class="list_content">
+                  <div class="content_icon">
+                    <img src="images/littleIcon.jpg">
+                  </div>
+                  <div class="pro_click">
+                    <a href="">2斤59元 顺丰包 海南</a>
+                    <div class="list_price">¥ 46.00</div>
+                     
+                  </div>
+                </div>
+                <div class="list_content">
+                  <div class="content_icon">
+                      <img src="images/littleIcon.jpg">
+                  </div>
+                  <div class="pro_click">
+                    <a href="">2斤59元 顺丰包 海南</a>
+                    <div class="list_price">¥ 46.00</div>
+                     
+                  </div>
+                </div>
+                <div class="list_more">
+                  <a href=""><span class="list_text">&nbsp;&nbsp;查看更多宝贝</span>
+                  <img src="images/icon/checkMore.jpg" alt="" /></a>
+                </div>
+            </div>
+            <!-- 左侧栏尚田推荐 -->
+            <div class="left_list  pro_clear">
+              <div class="list_title">尚田推荐</div>
+              <div class="list_content">
+                  <div class="content_icon">
+                    <a href=""><img src="images/littleIcon.jpg"></a>
+                  </div>
+                  <div class="pro_click">
+                    <a href="">2斤59元 顺丰包 海南</a>
+                    <div class="list_price">¥ 46.00</div>
+                     
+                  </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                    <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>     
+                </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                    <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>   
+                </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                  <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>   
+                </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                    <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>   
+                </div>
+              </div>
+              <div class="list_more">
+                <a href=""><span class="list_text">&nbsp;&nbsp;查看更多宝贝</span>
+                <img src="images/icon/checkMore.jpg" alt="" /></a>
+              </div>
+            </div>
+
+            <!-- 左侧栏浏览过的商品 -->
+            <div class="left_list  pro_clear">
+              <div class="list_title">浏览过的商品</div>
+              <div class="list_content">
+                <div class="content_icon">
+                  <img src="images/littleIcon.jpg">
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>
+                   
+                </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                    <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>
+                   
+                </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                    <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>
+                   
+                </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                  <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>
+                   
+                </div>
+              </div>
+              <div class="list_content">
+                <div class="content_icon">
+                    <a href=""><img src="images/littleIcon.jpg"></a>
+                </div>
+                <div class="pro_click">
+                  <a href="">2斤59元 顺丰包 海南</a>
+                  <div class="list_price">¥ 46.00</div>
+                   
+                </div>
+              </div>
+              <div class="list_more">
+                <a href=""><span class="list_text">&nbsp;&nbsp;查看更多宝贝</span>
+                <img src="images/icon/checkMore.jpg" alt="" /></a>
+              </div>
+            </div>
+          </div><!-- 左侧栏结束 -->
+
+          <!-- 产品详情页右边主区域 -->
+          <div class="right_div pro_list">
+            <p>产品页</p>
+            <!-- 排序 -->
+            <div class="pro_sort">
+              <label>排序：</label>
+              <ul>
+                <li><a class="sort-item time">时间<span class="sort-up"></span></a></li>
+                <li><a class="sort-item uptime">上架时间<span class="sort-up"></span></a></li>
+                <li><a class="sort-item scan">浏览数<span class="sort-up"></span></a></li>
+              </ul>
+            </div>
+            <span class="right_div_underline"></span>
+            <div class="right_inner_text">
+               <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                      <div class="s0-buy">
+                        <div class="s0-buyNum">
+                          <span class="num-option minus">-</span>
+                          <input type="text" class="num-each" value="0">
+                          <span class="num-option add">+</span>
+                        </div>
+                        <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                          <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                        </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                       <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                       <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜佛手瓜 300g/包佛手瓜 300g/包 300g/包</p></a>
+                      <span><p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p></span>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div><!-- 产品列表结束 --> 
+
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                      <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                        <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                       <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                       <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div><!-- 产品列表结束 --> 
+
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                      <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                        <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                       <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                       <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                </div>
+                <div class="sbox sbox-0 pbox">
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+                  <a href=""><span class="s0-01-img"><img src="images/s0-01.png"></span>
+                      <p class="s0-01-title">佛手瓜 300g/包</p></a>
+                      <p class="s0-01-detail">每100g鲜南瓜含淀粉10.2g，钙39mg</p>
+                      <p class="s0-01-price">￥<span>15.00</span>元</p>
+                                          <div class="s0-buy">
+                        <div class="s0-buyNum">
+                        <span class="num-option minus">-</span>
+                        <input type="text" class="num-each" value="0">
+                        <span class="num-option add">+</span>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                         <a class="buyBtn" href="#" title="加入购物车" onclick="">加入购物车</a>
+                      </div>
+                      </div>
+                      
+                <!-- 每个区域都会放上图片、名称、描述、价格、购物数量及加入购物车 -->
+
+                </div><!-- 产品列表结束 --> 
+                <div class="_page_"><!-- 分页 -->
+                  <ul>
+                    <li class="up_page"><a><img src="images/icon/PgUp.png">上一页</a></li>
+                    <li><a>1</a></li>
+                    <li class="current_page"><a>2</a></li>
+                    <li><a>3</a></li>
+                    <li><a>4</a></li>
+                    <li><a>5</a></li>
+                    <li class="down_page"><a>下一页<img src="images/icon/PgDn.png"></a></li>
+                  </ul>
+               </div>
+            </div>       
+          </div>
+          <div class="clear"></div>
+          <div class="pro_bottom_pic0">
+             <p>您还浏览过的商品</p>
+             <span class="right_div_underline underline02"></span>   
+             <div class="pro_bottom_pic01">
+               <b id="bot_prev" class="ctrl2"></b>
+               <b id="bot_Next" class="ctrl2"></b>
+               <div class="proBot_slide0">
+                 <div class="proBot_slide01">
+                   <ul>
+                     <li><a href="#"><img src="images/s2-01.jpg"></a></li>
+                     <li><a href="#"><img src="images/s2-05.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-02.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-03.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-04.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-03.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-05.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-01.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-03.jpg" ></a></li>
+                     <li><a href="#"><img src="images/s2-02.jpg" ></a></li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+          </div>
+        </div>
+    </div>
+    <div class="footer">
+      <div class="bg"></div>
+      <div class="grid_row">
+        <img class="logo_b" src="images/logo_b.png">
+        <div class="row">
+          <ul>
+            <li><a href="#">关于网站</a></li>
+            <li><a href="#">网站标签</a></li>
+            <li><a href="#">好文推荐</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul>
+            <li><a href="#">赞助我们</a></li>
+            <li><a href="#">百度地图</a></li>
+            <li><a href="#">谷歌地图</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">客服电话</a></li>
+            <li><a href="#">在线客服</a></li>
+            <li><a href="#"><img src="images/icon/qq.png" alt="QQ">0000000(点击查询）</a></li>
+            <li><a href="#"><img src="images/icon/blog.png" alt="微博">关注新浪微博</a></li>
+          </ul>
+        </div>
+      </div>     
+    </div>
+    <!-- footer部分结束 -->
+</html>
+
+
