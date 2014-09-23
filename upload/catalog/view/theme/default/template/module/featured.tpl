@@ -35,7 +35,7 @@
                         <div class="detail_b">
                             <a href=""><p class="imgTitle"><?php echo $product['name']; ?></p></a>
                             <p>~~简介~~</p>
-                            <p class="imgPrice">￥<?php echo $product['price']; ?></p> 
+                            <p class="imgPrice"><?php echo $product['price']; ?></p> 
                         </div>
                         <div class="purchase-warp">
                   <div class="product-amount">
@@ -43,7 +43,7 @@
                     <input type="text" class="product-amout-text" value="0">
                     <a href="javascript:void(0)" class="product-plus">+</a>
                   </div> 
-                  <div class="purchase-btn add-cart"><a href="javascript:void(0)">加入购物车</a></div>
+                  <div class="purchase-btn add-cart"><a onclick="addToCart('<?php echo $product["product_id"]?>');">加入购物车</a></div>
                 </div>
                     </li>
                   <?php } ?>
