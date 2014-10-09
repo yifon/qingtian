@@ -292,10 +292,10 @@ $(function(){
     });
 })
 /***产品详情页中图片预览向左向右轮播部分*****june*********end*****/
-/*********************** 产品详情页“搭配、套餐”的切换******june******start*/
+/*********************** 产品页“搭配、套餐”的切换******june******start*/
  var tabOptionIndex4 = 0;
  $(function() {
-     $(".daOption span").mouseover(function() {
+     $("#tab4 .daOption span").mouseover(function() {
          tabOptionIndex4 = $(".daOption span").index(this);
          tabOptionHover4(tabOptionIndex4);
      });
@@ -323,7 +323,26 @@ $(function(){
          $(".pro-0").eq(tabOptionIndex).addClass('proOn-0').siblings().removeClass('proOn-0');
      }
  }
+
+
  /*********************** 产品详情页“商品详情、评价、成交记录”的切换******june******end*/
+
+ // 作品欣赏套餐、搭配切换***bing***start
+  // var tabOptionIndex6 = 0;
+ $(function() {
+     $("#tab6 .daOption span").mouseover(function() {
+         tabOptionIndex6 = $(".daOption span").index(this);
+         tabOptionHover6(tabOptionIndex6);
+     });
+ });
+ function tabOptionHover6(tabOptionIndex) {
+     var  $li_6 = $(".daOption");
+     for (var i = 0; i < $li_6.length; i++) {
+         $li_6.eq(tabOptionIndex).addClass('daOn0').siblings().removeClass('daOn0');
+         $(".da-0").eq(tabOptionIndex).addClass('daOn-0').siblings().removeClass('daOn-0');
+     }
+
+ }
  /***********首页最顶端图片向左向右切换**********bing********start************/
 $(function(){
     var page = 1;
@@ -423,7 +442,7 @@ $(function(){
      });
  })
 
-// b***产品列表页底部图片切换***start****
+// **产品列表页底部图片切换***start****
 $(function(){
 
     var page = 1;
@@ -484,7 +503,6 @@ $(function(){
 })
 
 // *****登录、注册选项卡*****bing****start****
- 
   var tabOptionIndex8 = 0;
  $(function() {
      $(".TmenuTitle ul li").mouseover(function() {
@@ -502,3 +520,14 @@ $(function(){
  }
 
 // *****登录、注册选项卡*****bing****end****
+
+// 更多详情
+$(function(){
+    $(".more-detail").toggle(function(){
+        var index = $(".more-detail").index(this);
+        $(".detail-info").eq(index).css('display','block')
+    },function(){
+        var index = $(".more-detail").index(this);
+        $(".detail-info").eq(index).css('display','none');
+    })
+})
