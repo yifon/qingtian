@@ -1,48 +1,22 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
+<?php echo $header; ?>
+<div id="content" class="content">
+  <?php echo $content_top; ?>
   <div class="breadcrumb">
+    <img src="catalog/view/theme/default/image/icon/house.png">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <?php if ($thumb || $description) { ?>
-  <div class="category-info">
-    <?php if ($thumb) { ?>
-    <div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" /></div>
-    <?php } ?>
-    <?php if ($description) { ?>
-    <?php echo $description; ?>
-    <?php } ?>
-  </div>
-  <?php } ?>
-  <?php if ($categories) { ?>
-  <h2><?php echo $text_refine; ?></h2>
-  <div class="category-list">
-    <?php if (count($categories) <= 5) { ?>
-    <ul>
-      <?php foreach ($categories as $category) { ?>
-      <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-      <?php } ?>
-    </ul>
-    <?php } else { ?>
-    <?php for ($i = 0; $i < count($categories);) { ?>
-    <ul>
-      <?php $j = $i + ceil(count($categories) / 4); ?>
-      <?php for (; $i < $j; $i++) { ?>
-      <?php if (isset($categories[$i])) { ?>
-      <li><a href="<?php echo $categories[$i]['href']; ?>"><?php echo $categories[$i]['name']; ?></a></li>
-      <?php } ?>
-      <?php } ?>
-    </ul>
-    <?php } ?>
-    <?php } ?>
-  </div>
-  <?php } ?>
+   <div class="pro_course">
+    <?php echo $column_left; ?>
+<div class="right_div pro_list">
+  <p><?php echo "产品页" ?></p> 
   <?php if ($products) { ?>
-  <div class="product-filter">
-    <div class="display"><b><?php echo $text_display; ?></b> <?php echo $text_list; ?> <b>/</b> <a onclick="display('grid');"><?php echo $text_grid; ?></a></div>
-    <div class="limit"><b><?php echo $text_limit; ?></b>
+
+
+     <!-- <?php echo $text_list; ?> <b>/</b> <a onclick="display('grid');"><?php echo $text_grid; ?></a> -->
+
+   <!--<div class="limit"><b><?php echo $text_limit; ?></b>
       <select onchange="location = this.value;">
         <?php foreach ($limits as $limits) { ?>
         <?php if ($limits['value'] == $limit) { ?>
@@ -50,51 +24,64 @@
         <?php } else { ?>
         <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
         <?php } ?>
-        <?php } ?>
+        <?php } ?> 
       </select>
-    </div>
-    <div class="sort"><b><?php echo $text_sort; ?></b>
-      <select onchange="location = this.value;">
+    </div>  -->
+    <div class="pro_sort"><label><?php echo $text_sort; ?></label>
+      <ul>
         <?php foreach ($sorts as $sorts) { ?>
+        <li>
         <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
+        <a class="sort-item time" href="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?><span class="sort-up"></span></a>
         <?php } else { ?>
-        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+        <a class="sort-item time" href="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?><span class="sort-up"></span></a>
         <?php } ?>
         <?php } ?>
-      </select>
-    </div>
-  </div>
-  <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
-  <div class="product-list">
+       </li>
+      </ul>
+    </div>     
+<span class="right_div_underline"></span>
+<!--  <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>-->
+
+  <div class="right_innner_text">
     <?php foreach ($products as $product) { ?>
-    <div>
+    <div class="sbox sbox-0 pbox">
       <?php if ($product['thumb']) { ?>
-      <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
+      <a href="<?php echo $product['href']; ?>"><span class="s0-01-img"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></span><p><?php echo $product['name']; ?></p></a>
       <?php } ?>
-      <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
-      <div class="description"><?php echo $product['description']; ?></div>
+      <p class="s0-01-detail"><?php echo $product['description']; ?></p>
+
       <?php if ($product['price']) { ?>
-      <div class="price">
+      <p class="s0-01-price">
         <?php if (!$product['special']) { ?>
-        <?php echo $product['price']; ?>
+        <span><?php echo $product['price']; ?></span>元
         <?php } else { ?>
-        <span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
+        <span><?php echo $product['price']; ?></span>元 <span ><?php echo $product['special']; ?></span>元
         <?php } ?>
-        <?php if ($product['tax']) { ?>
+       <!-- <?php if ($product['tax']) { ?>
         <br />
         <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-        <?php } ?>
-      </div>
+        <?php } ?> -->
+      </p>
+      <div class="s0-buy">
+                        <div class="s0-buyNum">
+                         <a href="javascript::" class="num-option minus">-</a>
+                          <input type="text" class="num-each" value="0">
+                          <a href="javascript::" class="num-option add">+</a>
+                      </div>
+                      <div class="buy-cart list-buy-cart"><!-- 此处为每个商品的购物车按钮 -->
+                        <a class="buyBtn" href="#" title="加入购物车" onclick="addToCart('<?php echo $product['product_id']; ?>');">加入购物车</a>
+                      </div>
+                      </div>
       <?php } ?>
       <?php if ($product['rating']) { ?>
       <div class="rating"><img src="catalog/view/theme/default/image/stars-<?php echo $product['rating']; ?>.png" alt="<?php echo $product['reviews']; ?>" /></div>
       <?php } ?>
-      <div class="cart">
+     <!-- <div class="cart">
         <input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" />
-      </div>
-      <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></div>
-      <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></div>
+      </div> -->
+     <!-- <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></div>
+      <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></div> -->
     </div>
     <?php } ?>
   </div>
@@ -106,7 +93,12 @@
     <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
   </div>
   <?php } ?>
-  <?php echo $content_bottom; ?></div>
+  <?php echo $content_bottom; ?>
+</div>
+</div>
+</div>
+
+
 <script type="text/javascript"><!--
 function display(view) {
 	if (view == 'list') {
@@ -193,9 +185,9 @@ function display(view) {
 view = $.totalStorage('display');
 
 if (view) {
-	display(view);
+	display('grid');
 } else {
-	display('list');
+	display('grid');
 }
 //--></script> 
 <?php echo $footer; ?>
