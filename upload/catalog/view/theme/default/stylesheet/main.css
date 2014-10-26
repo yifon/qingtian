@@ -22,7 +22,7 @@ img {
 .header {
 	margin: 0 auto;
 	height: 185px;
-	background: url(../images/Baner.png);
+	background: url(../image/Baner.png);
 }
 .header_t {
 	margin: 0 auto;
@@ -47,7 +47,7 @@ img {
 	height: 71px;
 }
 .header_t .nav span {
-	background-image: url("../images/nav_06.png");
+	background-image: url("../image/nav_06.png");
 	display: inline;
 	padding: 0 10px;
 	float: left;
@@ -125,7 +125,7 @@ img {
 	height: 25px;
 	width: 34px;
 	border: none;
-	background: transparent url(../images/search-submit.png) no-repeat 0px 0px;
+	background: transparent url(../image/search-submit.png) no-repeat 0px 0px;
 	border-right: 1px solid #cccccc;
 }
 .search-input {
@@ -296,12 +296,12 @@ list-style-position: inside;
 .spanBtn .prev {
 	margin-left: 10px;
 	left: 0;
-	background: url(../images/prev.png) no-repeat;
+	background: url(../image/prev.png) no-repeat;
 }
 .spanBtn .next {
 	margin-right: 10px;
 	right: 0;
-	background: url(../images/next.png) no-repeat;
+	background: url(../image/next.png) no-repeat;
 }
 .pagination {
 	list-style: none;
@@ -322,7 +322,7 @@ list-style-position: inside;
 	background-position: 0 0;
 	float: left;
 	overflow: hidden;
-	background-image: url(../images/circle.png);
+	background-image: url(../image/circle.png);
 }
 .pagination li.current a, .pagination li.current a:hover {
 	background-position: -16px -0px
@@ -344,7 +344,7 @@ list-style-position: inside;
 }
 .title .title_l {
 	position: relative;
-	background: url(../images/title.png);
+	background: url(../image/title.png);
 	width: 132px;
 	height: 57px;
 	color: #004066;
@@ -454,7 +454,7 @@ list-style-position: inside;
 	height: 26px;
 	top: 0;
 	right: 16px;
-	background: url("../images/tip.png") no-repeat;
+	background: url("../image/tip.png") no-repeat;
 	text-align: center;
 	color: #FFF;
 	font-size: 12px;
@@ -608,7 +608,7 @@ list-style-position: inside;
 	margin: 0 auto;
 	height: 427px;
 	width: 100%;
-	background: url(../images/footer.png);
+	background: url(../image/footer.png);
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -759,7 +759,7 @@ list-style-position: inside;
 	font-size: 12px;
 	line-height: 25px;
 	letter-spacing: 2px;
-	background: url(../images/floralLanguage.jpg) no-repeat;
+	background: url(../image/floralLanguage.jpg) no-repeat;
 }
 
 /* ***********首页图片轮播***june***end************** */
@@ -1104,7 +1104,7 @@ img#left_picture {
 	height: 400px;
 }
 .pro_img b {
-	background: url(../images/green.png) no-repeat;
+	background: url(../image/green.png) no-repeat;
 	position: absolute;
 	width: 9px;
 	height: 5px;
@@ -1140,10 +1140,10 @@ img#left_picture {
 	margin: 25px auto 0;
 }
 #prev_small b {
-	background: url(../images/prev2.png) no-repeat;
+	background: url(../image/prev2.png) no-repeat;
 }
 #next_small b {
-	background: url(../images/next2.png) no-repeat;
+	background: url(../image/next2.png) no-repeat;
 }
 .pic_carousel {
 	margin: 0 17px;
@@ -1385,7 +1385,7 @@ img#left_picture {
 	float: right;
 	padding-right: 15px;
 	padding-top: 10px;
-	background: url(../images/triangle.png) no-repeat scroll 59px 14px;
+	background: url(../image/triangle.png) no-repeat scroll 59px 14px;
 	font-family: "MicroSoft YeHei";
 	font-size: 14px;
 	color: #666;
@@ -1557,7 +1557,7 @@ img#left_picture {
 	*line-height: 1;
 }
 .tb-selected .small-img {
-	background: url('../images/green.png') no-repeat 10px -10px;
+	background: url('../image/green.png') no-repeat 10px -10px;
 }
 .tb-thumb {
 	margin: 0 20px;
@@ -1622,7 +1622,7 @@ div.zoomDiv {
 }
 div.zoomMask {
 	position: absolute;
-	background: url("./images/mask.png") repeat scroll 0 0 transparent;
+	background: url("./image/mask.png") repeat scroll 0 0 transparent;
 	cursor: move;
 	z-index: 1;
 }
@@ -1656,7 +1656,7 @@ div.zoomMask {
 	line-height: 35px;
 	width: 230px;
 	height: 35px;
-	background: url(../images/icon/accbtn.jpg
+	background: url(../image/icon/accbtn.jpg
 		);
 	text-align: center;
 	font-weight: bold;
@@ -1704,13 +1704,13 @@ div.zoomMask {
 	position: relative;
 }
 #cart_table .add {
-	background: url(../images/icon/plus.jpg) no-repeat;
+	background: url(../image/icon/plus.jpg) no-repeat;
 	width: 25px;
 	height: 30px;
 	cursor: pointer;
 }
 #cart_table .reduce {
-	background: url(../images/icon/minus.jpg) no-repeat;
+	background: url(../image/icon/minus.jpg) no-repeat;
 	width: 25px;
 	height: 30px;
 	cursor: pointer;
@@ -1722,7 +1722,7 @@ div.zoomMask {
 	width: 31px;
 	height: 30px;
 	line-height: 30px;
-	background: url(../images/icon/input.jpg) no-repeat;
+	background: url(../image/icon/input.jpg) no-repeat;
 	border: 0;
 	text-align: center;
 	font-size: 16px;
@@ -1769,7 +1769,7 @@ div.zoomMask {
 	margin-left: 78px;
 }
 .cart_icon {
-	background: url(../images/icon/cart.png) no-repeat;
+	background: url(../image/icon/cart.png) no-repeat;
 	filter: alpha(opacity=60);
 	opacity: 1;
 	width: 75px;
@@ -1813,7 +1813,7 @@ div.zoomMask {
 }
 #pro-1 .ass_detail {
 	height: 100px;
-	background: url(../images/icon/acc_bg.png);
+	background: url(../image/icon/acc_bg.png);
 	border-top: 1px solid #0064a6;
 	border-bottom: 1px solid #ccc;
 	z-index: 1;
@@ -2046,7 +2046,7 @@ div.zoomMask {
 	cursor: pointer;
 }
 .num-option:hover {
-	background: url(../images/icon/alick.gif) 0 -28px repeat-x;
+	background: url(../image/icon/alick.gif) 0 -28px repeat-x;
 	color: #004066;
 }
 input.num-each {
@@ -2140,7 +2140,7 @@ input.num-each {
 	line-height: 33px;
 	padding-left: 15px;
 	color: #333;
-	background: url(../images/icon/listdown.png) no-repeat;
+	background: url(../image/icon/listdown.png) no-repeat;
 	border-bottom: 1px solid #e4e4e4;
 }
 .pro_course .current_list {
@@ -2245,7 +2245,7 @@ input.num-each {
 	line-height: 33px;
 	padding-left: 10px;
 	color: #333333;
-	background: url(../images/layer.png) no-repeat scroll -8px -3px;
+	background: url(../image/layer.png) no-repeat scroll -8px -3px;
 }
 .center_course .current ul li {
 	line-height: 35px;
@@ -2309,14 +2309,14 @@ input.num-each {
 }
 .sort-up {
 	display: inline-block;
-	background: url(../images/icon/up1.png) no-repeat #fff;
+	background: url(../image/icon/up1.png) no-repeat #fff;
 	margin-left: 3px;
 	width: 8px;
 	height: 10px;
 }
 .sort-down {
 	display: inline-block;
-	background: url(../images/icon/down1.png) no-repeat #fff;
+	background: url(../image/icon/down1.png) no-repeat #fff;
 	margin-left: 3px;
 	width: 8px;
 	height: 10px;
@@ -2354,11 +2354,11 @@ input.num-each {
 	top: 65px;
 }
 .pro_bottom_pic01 #bot_prev {
-	background: url(../images/proPrev.png) no-repeat;
+	background: url(../image/proPrev.png) no-repeat;
 	left: 0;
 }
 .pro_bottom_pic01 #bot_Next {
-	background: url(../images/proNext.png) no-repeat;
+	background: url(../image/proNext.png) no-repeat;
 	right: 0;
 }
 .proBot_slide0 {
@@ -3006,7 +3006,7 @@ margin: 0 auto
 	width: 90px;
 }
 .group .moreinfo {
-	background: url(../images/icon/down.jpg)  no-repeat;
+	background: url(../image/icon/down.jpg)  no-repeat;
 	width: 15px;
 	height: 15px;
 	float: right;
