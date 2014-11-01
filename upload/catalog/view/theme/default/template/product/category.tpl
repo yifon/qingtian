@@ -190,4 +190,15 @@ if (view) {
 	display('grid');
 }
 //--></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+$(".pro_sort").children().children().children().eq(0).hide();
+$(".pro_sort").children().children().children().eq(2).hide();
+$(".pro_sort").children().children().children().eq(4).hide();
+$(".pro_sort").children().children().children().eq(6).hide();
+$(".pro_sort").children().children().children().eq(7).hide();
+$(".pro_sort").children().children().children().eq(8).hide();
+$(".pro_sort").children().children().children().eq(9).hide();
+});
+</script>
 <?php echo $footer; ?>
