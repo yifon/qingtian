@@ -65,11 +65,18 @@ label {
 }
 /* layout */
 #container {
+	/*width: 980px;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+.inner{
 	width: 980px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
 }
+
 #column-left {
 	float: left;
 	width: 180px;
@@ -95,6 +102,7 @@ label {
 	padding-bottom: 4px;
 	position: relative;
 	z-index: 99;
+	background: url("../image/Baner.png");
 }
 #header #logo {
 	position: absolute;
@@ -1593,13 +1601,24 @@ ul.box-filter > li ul {
 }
 /* footer */ 
 #footer {
-	clear: both;
+/*	clear: both;
 	overflow: auto;
 	min-height: 100px;
 	padding: 20px;
 	border-top: 1px solid #DBDEE1;
 	border-bottom: 1px solid #DBDEE1;
-	background: #F8F8F8;
+	background: #F8F8F8;*/
+
+	position: relative;
+	margin: 0 auto;
+	height: 427px;
+	width: 100%;
+	background: url(../image/footer.png);
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	clear: both;
 }
 #footer h3 {
 	color: #000000;

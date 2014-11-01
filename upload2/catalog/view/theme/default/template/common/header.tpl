@@ -94,4 +94,5 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   </ul>
 </div>
 <?php } ?>
+<div class="inner">
 <div id="notification"></div>
