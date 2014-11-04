@@ -24,7 +24,7 @@ $(document).ready(function(){
         //小图切换
         $('.slide_span span').eq(i_mun-1).addClass('slide_span_one')
                    .siblings('span').removeClass('slide_span_one');
-        i_mun--
+        i_mun--;
     });
 
     //左边按钮移动到其上时更换背景图片
@@ -91,15 +91,14 @@ $(document).ready(function(){
 // 选项卡部分
 var tabOptionIndex2 = 0; 
  $(function() {  
-     var $li_2 = $(".SmenuTitle ul li");
+     var $li_2 = $(".SmenuTitle li");
      $li_2.mouseover(function() {
          tabOptionIndex2 = $li_2.index(this);
          tabOptionHover2(tabOptionIndex2);
      });
-     $("#assess_nav").children("li").unbind();
  });
  function tabOptionHover2(tabOptionIndex) {
-    var $li_2 = $(".SmenuTitle ul li");
+    var $li_2 = $(".SmenuTitle li");
     for (var i = 0; i < $li_2.length; i++) {
          $li_2.eq(tabOptionIndex).addClass('SmenuTitleOn0').siblings().removeClass('SmenuTitleOn0');
          $(".SmenuCont").eq(tabOptionIndex).addClass('SmenuContentOn0').siblings().removeClass('SmenuContentOn0');
@@ -307,6 +306,8 @@ $(function(){
          $(".da-0").eq(tabOptionIndex).addClass('daOn-0').siblings().removeClass('daOn-0');
      }
  }
+
+
  /*********************** 产品详情页“搭配、套餐”的切换******june******end*/
   /*********************** 产品详情页“商品详情、评价、成交记录”的切换******june******start*/
  var tabOptionIndex5 = 0;
