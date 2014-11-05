@@ -2195,7 +2195,7 @@ input.num-each {
 	height: 0px;
 	float: left;
 	position: absolute;
-	margin-top: -2px;
+	margin-top: -22px;
 	overflow: hidden;
 	/*IE6下默认行高*/
 }
@@ -2324,7 +2324,7 @@ input.num-each {
 .sbox {
 	border: none;
 	float: left;
-	height: 357px;
+	height: 430px;
 	width: 192px;
 }
 .underline02 {
@@ -3108,3 +3108,7 @@ margin: 0 auto
 
 .more-detail{float: left;margin-top: 10px}
 .show{display: block}
+
+p.s0-01-detail{
+text-overflow: ellipsis;
+}

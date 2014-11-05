@@ -41,7 +41,7 @@
         </div>
 
           <!-- 搜索栏 -->
-        <div class="searchdiv">
+        <div class="searchdiv clearfix">
           <form class="searchform" method="get"> 
            <input class="search-submit" type="submit" value=""/>
            <input id="search-input" class="search-input" type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" size="30px" />

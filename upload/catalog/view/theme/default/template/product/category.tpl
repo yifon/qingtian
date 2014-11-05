@@ -85,7 +85,18 @@
     </div>
     <?php } ?>
   </div>
-  <div class="pagination"><?php echo $pagination; ?></div>
+  <div class="_page_">
+    <ul>
+                    <li class="up_page"><a><img src="catalog/view/theme/default/image/icon/PgUp.png">上一页</a></li>
+                    <li><a>1</a></li>
+                    <li class="current_page"><a>2</a></li>
+                    <li><a>3</a></li>
+                    <li><a>4</a></li>
+                    <li><a>5</a></li>
+                    <li class="down_page"><a>下一页<img src="catalog/view/theme/default/image/icon/PgDn.png"></a></li>
+                  </ul>
+  </div>
+  
   <?php } ?>
   <?php if (!$categories && !$products) { ?>
   <div class="content"><?php echo $text_empty; ?></div>
@@ -95,6 +106,7 @@
   <?php } ?>
   <?php echo $content_bottom; ?>
 </div>
+ <div class="clear"></div>
 </div>
 </div>
 
