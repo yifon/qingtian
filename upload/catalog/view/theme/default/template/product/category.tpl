@@ -85,6 +85,7 @@
     </div>
     <?php } ?>
   </div>
+  <div class="clear"></div>
   <div class="_page_">
     <ul>
                     <li class="up_page"><a><img src="catalog/view/theme/default/image/icon/PgUp.png">上一页</a></li>

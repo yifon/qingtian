@@ -4,10 +4,10 @@
       <?php foreach ($categories as $category) { ?>
       <div class = "current2">
         <?php if ($category['category_id'] == $category_id) { ?>
-        <h4>  <a href="<?php echo $category['href']; ?>" class="active">
-                       <?php echo $category['name']; ?></a>    <h4>
+        <h4> <a href="<?php echo $category['href']; ?>" class="active">
+                      <?php echo $category['name']; ?></a></h4>   
         <?php } else { ?>
-       <h4> <!--<a href="<?php echo $category['href']; ?>"></a>-->
+       <h4> <a href="<?php echo $category['href']; ?>"></a>
        <?php echo $category['name']; ?></h4>
 
         <?php } ?>
