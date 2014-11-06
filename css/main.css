@@ -22,11 +22,10 @@ img {
 .clear{clear: both;}
 .header {
 	margin: 0 auto;
-	height: 185px;
 	background: url(../images/Baner.png);
 }
 .header_t {
-	margin: 0 auto;
+	margin: 20px auto 0;
 	width: 1180px;
 }
 .header_t .logo {
@@ -72,14 +71,17 @@ img {
 .purchase {
 	background-position: -400px 0;
 }
-.header_b {
-	background-color: #004066;
-	height: 28px;
-	line-height: 28px;
-	position: relative;
-	z-index: 3;
-	color: #fff;
-	font-size: 14px;
+.header_b{
+	background: none repeat scroll 0 0 #004066;
+    color: #fff;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    position: fixed;
+    top: 0;
+	left: 0;
+    width: 100%;
+    z-index: 3;
 }
 .header .myspan {
 	line-height: 28px;
@@ -2288,6 +2290,11 @@ input.num-each {
 	margin-top: 5px;
 	font-size: 16px;
 }
+.pbox .s0-01-detail{
+	width: 180px;
+	height: 64px;
+	overflow: hidden;
+}
 .pbox img {
 	width: 180px;
 	height: 180px;
@@ -2339,6 +2346,7 @@ input.num-each {
 	float: left;
 	height: 357px;
 	width: 192px;
+	margin-top: 15px;
 }
 .underline02 {
 	width: 118px !important
