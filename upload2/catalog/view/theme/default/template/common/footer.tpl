@@ -1,5 +1,8 @@
 </div>
 <div id="footer">
+  <div class="bg"></div>
+  <div class="grid_row">
+        <div class="logo_b"></div>
   <?php if ($informations) { ?>
   <div class="column">
     <h3><?php echo $text_information; ?></h3>
@@ -35,6 +38,7 @@
       <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
       <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
     </ul>
+  </div>
   </div>
 </div>
 <!--

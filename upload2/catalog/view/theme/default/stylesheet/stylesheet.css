@@ -106,8 +106,8 @@ label {
 }
 #header #logo {
 	position: absolute;
-	top: 25px;
-	left: 15px;
+	top: 10px;
+	left: 150px;
 }
 #language {
 	position: absolute;
@@ -325,7 +325,8 @@ label {
 }
 /* menu */
 #menu {
-	background: #585858;
+	/*background: #585858;*/
+	background: #004066;
 	border-bottom: 1px solid #000000;
 	height: 37px;
 	margin-bottom: 15px;
@@ -1621,15 +1622,16 @@ ul.box-filter > li ul {
 	clear: both;
 }
 #footer h3 {
-	color: #000000;
+	color: #fff;
 	font-size: 14px;
 	margin-top: 0px;
 	margin-bottom: 8px;
 }
 #footer .column {
 	float: left;
-	width: 25%;
-	min-height: 100px;
+	/*width: 25%;*/
+	/*min-height: 100px;*/
+	margin-right: 100px;
 }
 #footer .column ul {
 	margin-top: 0px;
@@ -1641,14 +1643,14 @@ ul.box-filter > li ul {
 }
 #footer .column a {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 }
 #footer .column a:hover {
 	text-decoration: underline;
 }
 #powered {
 	margin-top: 5px;
-	text-align: right;
+	text-align: center;
 	clear: both;
 }
 /* banner */
@@ -1659,4 +1661,30 @@ ul.box-filter > li ul {
 }
 .banner div img {
 	margin-bottom: 20px;
+}
+
+/*****后期添加*****/
+.bg {
+	height: 170px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	background-color: #000;
+}
+
+#footer .grid_row {
+	position: absolute;
+	bottom: 0;
+	left: 200px;
+	height: 150px;
+}
+
+#footer .logo_b {
+	float: left;
+	margin: 10px 120px 0 0;
+	width: 211px;
+	height: 60px;
+	background: url("../image/logo_b.png");
 }
