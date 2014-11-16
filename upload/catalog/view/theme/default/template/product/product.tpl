@@ -1,38 +1,66 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
+<?php echo $header; ?>
+
+<div id="content" class="content wrapper"><?php echo $content_top; ?>
   <div class="breadcrumb">
+    <img src="catalog/view/theme/default/image/icon/house.png">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <div class="product-info">
+  <div class="product">
     <?php if ($thumb || $images) { ?>
-    <div class="left">
+    <div class="left_product">
+       <div class="left_banner">
+        <div id="image-choice" class="i-list">
       <?php if ($thumb) { ?>
-      <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
+      <div class="tb-booth tb-pic tb-s310"><a href="<?php echo $popup; ?>" target="_blank"><img src="<?php echo $thumb; ?>"   class="jqzoom" style="cursor: crosshair;"/></a></div>
       <?php } ?>
+
       <?php if ($images) { ?>
-      <div class="image-additional">
+      <div id="left-choice" class="ctrl"><img src="catalog/view/theme/default/image/icon/prev.png" alt="左切换"></div>
+      <div class="i-bot-list">
+        <ul class="tb-thumb" id="thumblist">
+          <?php  $i = 0;  ?>
         <?php foreach ($images as $image) { ?>
-        <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+        
+        <?php  $i++; if($i==1){  ?>
+        <li class="tb-selected">
+          <?php }else{?>
+        <li >
+          <?php } ?>
+          <div class="tb-pic tb-s40">
+        <a href="#"><img class="small-img" src="<?php echo $image['thumb']; ?>"  alt="<?php echo $heading_title; ?>" mid="<?php echo $image['popup']; ?>" big="<?php echo $image['popup']; ?>"  /></a></div></li>
+
         <?php } ?>
+      </ul>
       </div>
+      <div id="right-choice" class="ctrl"><img src="catalog/view/theme/default/image/icon/next.png" alt="右切换"></div>
       <?php } ?>
     </div>
-    <?php } ?>
-    <div class="right">
-      <div class="description">
-        <?php if ($manufacturer) { ?>
-        <span><?php echo $text_manufacturer; ?></span> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a><br />
-        <?php } ?>
-        <span><?php echo $text_model; ?></span> <?php echo $model; ?><br />
-        <?php if ($reward) { ?>
-        <span><?php echo $text_reward; ?></span> <?php echo $reward; ?><br />
-        <?php } ?>
-        <span><?php echo $text_stock; ?></span> <?php echo $stock; ?></div>
-      <?php if ($price) { ?>
-      <div class="price"><?php echo $text_price; ?>
+    <script type="text/javascript">
+$(document).ready(function(){
+  $(".jqzoom").imagezoom();
+  $("#thumblist li a").mouseover(function () {
+      $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
+    $(".jqzoom").attr('src',$(this).find("img").attr("mid"));
+    $(".jqzoom").attr('rel',$(this).find("img").attr("big"));
+  });
+});
+</script>
+<div class="bottom_link">
+              <img src="catalog/view/theme/default/image/icon/share.png">
+              <a href="#">分享</a>
+              <img src="catalog/view/theme/default/image/icon/collect.png">
+              <a href="#">收藏</a>
+</div>
+    </div>
+<div class="center_state">
+      <h3>国产玫瑰花头批发</h3>
+            <p>颜色多款</p>
+            <p>尺寸：2-3cm,4-5cm,5-6cm</p>
+            <?php if ($price) { ?>
+      <div class="price_place">
+      <!--  <?php echo $text_price; ?>
         <?php if (!$special) { ?>
         <?php echo $price; ?>
         <?php } else { ?>
@@ -45,163 +73,44 @@
         <?php if ($points) { ?>
         <span class="reward"><small><?php echo $text_points; ?> <?php echo $points; ?></small></span><br />
         <?php } ?>
-        <?php if ($discounts) { ?>
-        <br />
-        <div class="discount">
-          <?php foreach ($discounts as $discount) { ?>
-          <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
-          <?php } ?>
-        </div>
-        <?php } ?>
+         <?php } ?> -->
       </div>
-      <?php } ?>
-      <?php if ($options) { ?>
-      <div class="options">
-        <h2><?php echo $text_option; ?></h2>
-        <br />
-        <?php foreach ($options as $option) { ?>
-        <?php if ($option['type'] == 'select') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <select name="option[<?php echo $option['product_option_id']; ?>]">
-            <option value=""><?php echo $text_select; ?></option>
-            <?php foreach ($option['option_value'] as $option_value) { ?>
-            <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
-            <?php if ($option_value['price']) { ?>
-            (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
-            <?php } ?>
-            </option>
-            <?php } ?>
-          </select>
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'radio') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <?php foreach ($option['option_value'] as $option_value) { ?>
-          <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
-          <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
-            <?php if ($option_value['price']) { ?>
-            (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
-            <?php } ?>
-          </label>
-          <br />
-          <?php } ?>
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'checkbox') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <?php foreach ($option['option_value'] as $option_value) { ?>
-          <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
-          <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
-            <?php if ($option_value['price']) { ?>
-            (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
-            <?php } ?>
-          </label>
-          <br />
-          <?php } ?>
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'image') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <table class="option-image">
-            <?php foreach ($option['option_value'] as $option_value) { ?>
-            <tr>
-              <td style="width: 1px;"><input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" /></td>
-              <td><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" /></label></td>
-              <td><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
-                  <?php if ($option_value['price']) { ?>
-                  (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
-                  <?php } ?>
-                </label></td>
-            </tr>
-            <?php } ?>
-          </table>
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'text') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" />
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'textarea') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <textarea name="option[<?php echo $option['product_option_id']; ?>]" cols="40" rows="5"><?php echo $option['option_value']; ?></textarea>
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'file') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <input type="button" value="<?php echo $button_upload; ?>" id="button-option-<?php echo $option['product_option_id']; ?>" class="button">
-          <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value="" />
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'date') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="date" />
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'datetime') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="datetime" />
-        </div>
-        <br />
-        <?php } ?>
-        <?php if ($option['type'] == 'time') { ?>
-        <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-          <?php if ($option['required']) { ?>
-          <span class="required">*</span>
-          <?php } ?>
-          <b><?php echo $option['name']; ?>:</b><br />
-          <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="time" />
-        </div>
-        <br />
-        <?php } ?>
-        <?php } ?>
-      </div>
-      <?php } ?>
-      <div class="cart">
+     
+            <!--price 结束 -->
+      <div class="detail">
+        <div class="weight">
+                <p class="myfont" style="float:left;">净含量</p>
+                <p style="float:left;
+                margin-left:30px;">1000g</p>
+              </div>
+              <div class="detail_info">
+                <div class="info1">
+                  <p class="num1">2880</p>
+                  <p class="myfont">月销量</p>
+                </div>
+                <div class="info2">
+                  <p class="num2">2880</p>
+                  <p class="myfont">累计评价</p>
+                </div>
+              </div>
+              <div class="account">
+                <p class="myfont">数量</p>
+                <div class="s0-buyNum account-num">
+                      <span class="num-option minus">-</span>
+                      <input type="text" class="num-each" value="0">
+                      <span class="num-option num-add">+</span>
+                </div>
+                <p>库存34123件</p>
+              </div>
+              <div class="shopping_button">
+                <a class="buy_btn" href="#">立即购买</a>
+                <a class="cart_btn" href="#">加入购物车</a>
+              </div>
+              <div class="promise">
+                <p class="myfont">服务承诺</p>
+              </div>
+
+     <!-- <div class="cart">
         <div><?php echo $text_qty; ?>
           <input type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" />
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
@@ -214,19 +123,826 @@
         <?php if ($minimum > 1) { ?>
         <div class="minimum"><?php echo $text_minimum; ?></div>
         <?php } ?>
-      </div>
-      <?php if ($review_status) { ?>
-      <div class="review">
-        <div><img src="catalog/view/theme/default/image/stars-<?php echo $rating; ?>.png" alt="<?php echo $reviews; ?>" />&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $reviews; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $text_write; ?></a></div>
-        <div class="share"><!-- AddThis Button BEGIN -->
-          <div class="addthis_default_style"><a class="addthis_button_compact"><?php echo $text_share; ?></a> <a class="addthis_button_email"></a><a class="addthis_button_print"></a> <a class="addthis_button_facebook"></a> <a class="addthis_button_twitter"></a></div>
-          <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js"></script> 
-          <!-- AddThis Button END --> 
+      </div> -->
+    </div>
+  
+    
+  </div>
+
+
+    </div>
+    <?php } ?>
+    <div class="right_product">
+         <div class="recommend">
+            <p>晴天热销推荐</p>           
+          </div>
+          <div class="pro">
+            <div class="pro2">
+              <ul>
+               <li>
+                 <a href="#"><img src="catalog/view/theme/default/image/pro/pro1.jpg">
+                   <span class="price_p"><span>￥46.00</span></span>
+                 </a>
+               </li>
+               <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro2.jpg"></a>
+                 <span class="price_p"><span>￥46.00</span></span>
+                </li>
+                <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro3.jpg"></a>
+                 <span class="price_p"><span>￥46.00</span></span>
+                </li>
+                <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro4.jpg">
+                  <span class="price_p"><span>￥46.00</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro5.jpg"></a>
+                  <span class="price_p"><span>￥46.00</span></span>
+                </li>
+                <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro6.jpg"></a>
+                  <span class="price_p"><span>￥46.00</span></span>
+                </li>
+                 <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro7.jpg">
+                  <span class="price_p"><span>￥46.00</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro8.jpg"></a>
+                  <span class="price_p"><span>￥46.00</span></span>
+                </li>
+                <li>
+                  <a href="#"><img src="catalog/view/theme/default/image/pro/pro9.jpg"></a>
+                  <span class="price_p"><span>￥46.00</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="btn">
+            <div><img id="img1" src="catalog/view/theme/default/image/icon/bottom.png"></div>
+             <div><img id="img2" src="catalog/view/theme/default/image/icon/top.png"></div>
+          </div>      
+       
+
+          <!-- 更多商品 -->
+          <div class="more_pro"><a href="#">更多商品</a></div>
+        </div>
+  </div>
+  <div class="combo">     
+      
+          <ul class="daBox" id="tab4">
+          <li class="daOption daOn0"><span id="dapei" class="dapei"><a href="#da-0">搭配</a></span></li>
+          <li class="daOption"><span id="taocan" class="taocan"><a href="#da-1">套餐</a></span></li>
+          </ul>
+ <div class="da-area">
+            <div id="da-0" class="da-0 daOn-0">
+             <div class="da-0-pro">
+               <span class="da-0-img"><img src="catalog/view/theme/default/image/pro/pro9.jpg"></span>
+               <p class="da-0-title">樱桃番茄 300g/包</p>
+               <p class="da-0-price">￥<span>46.00</span>元</p>
+               <p class="da-0-ad">搭配省140.00元</p>
+             </div>
+             
+             <div class="da-0-add">+</div><!-- 第一项产品后面会跟个“+” -->
+
+             <div class="da-0-pro">
+               <span class="da-0-img"><img src="catalog/view/theme/default/image/pro/pro4.jpg"></span>
+               <p class="da-0-title">樱桃番茄 300g/包</p>
+               <p class="da-0-price">￥<span>46.00</span>元</p>
+               <p class="da-0-ad">搭配省140.00元</p>
+             </div>
+             <div class="da-0-pro">
+               <span class="da-0-img"><img src="catalog/view/theme/default/image/pro/pro5.jpg"></span>
+               <p class="da-0-title">樱桃番茄 300g/包</p>
+               <p class="da-0-price">￥<span>46.00</span>元</p>
+               <p class="da-0-ad">搭配省140.00元</p>
+             </div>
+             <div class="da-0-pro">
+               <span class="da-0-img"><img src="catalog/view/theme/default/image/pro/pro6.jpg"></span>
+               <p class="da-0-title">樱桃番茄 300g/包</p>
+               <p class="da-0-price">￥<span>46.00</span>元</p>
+               <p class="da-0-ad">搭配省140.00元</p>
+             </div>
+             <div class="da-0-pro">
+               <span class="da-0-img"><img src="catalog/view/theme/default/image/pro/pro7.jpg"></span>
+               <p class="da-0-title">樱桃番茄 300g/包</p>
+               <p class="da-0-price">￥<span>46.00</span>元</p>
+               <p class="da-0-ad">搭配省140.00元</p>
+             </div>
+
+             <!-- 价格、立即购买 -->
+             <div class="da-all">
+               <p class="da-why">搭配买共省140.00元</p>
+               <p class="da-money">套餐价：￥<span class="da-price">268.00</span>X</p>
+               <input type="text" value="1" class="da-num">
+               <span class="da-buy"><a href="#">立即购买套餐</a></span>
+               <span class="da-cart"><a href="#">加入购物车</a></span>
+             </div>
+            </div>
+            <div id="da-1" class="da-0">
+               aaa
+              
+            </div>
+          </div>       
+    </div>
+    <div class="product-ad">广告位</div>
+    <div class="main">
+      <!-- 左侧栏 -->
+      <div class="left_list">
+          <div class="list_title">热销榜</div>
+          <div class="list_content">
+            <div class="content_icon">
+              <img src="catalog/view/theme/default/image/pro/pro5.jpg">
+            </div>
+            <div class="pro_click">
+              <a href="">2斤59元 顺丰包 海南</a>
+              <div class="list_price">¥ 46.00</div>
+              <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+            </div>
+            </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <img src="catalog/view/theme/default/image/pro/pro6.jpg">
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <img src="catalog/view/theme/default/image/pro/pro7.jpg">
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+            <img src="catalog/view/theme/default/image/pro/pro8.jpg">
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <img src="catalog/view/theme/default/image/pro/pro9.jpg">
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_more">
+          <a href=""><span class="list_text">&nbsp;&nbsp;查看更多宝贝</span>
+          <img src="catalog/view/theme/default/image/icon/checkMore.jpg" alt=""></a>
         </div>
       </div>
-      <?php } ?>
+      <div class="left_list">
+        <div class="list_title">尚田推荐</div>
+          <div class="list_content">
+            <div class="content_icon">
+              <a href=""><img src="catalog/view/theme/default/image/pro/pro7.jpg"></a>
+            </div>
+            <div class="pro_click">
+              <a href="">2斤59元 顺丰包 海南</a>
+              <div class="list_price">¥ 46.00</div>
+              <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+            </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <a href=""><img src="catalog/view/theme/default/image/pro/pro6.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <a href=""><img src="catalog/view/theme/default/image/pro/pro8.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+            <a href=""><img src="catalog/view/theme/default/image/pro/pro9.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <a href=""><img src="catalog/view/theme/default/image/pro/pro4.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_more">
+          <a href=""><span class="list_text">&nbsp;&nbsp;查看更多宝贝</span>
+          <img src="catalog/view/theme/default/image/icon/checkMore.jpg" alt=""></a>
+        </div>
+      </div>
+      <div class="left_list">
+        <div class="list_title">浏览过的商品</div>
+          <div class="list_content">
+            <div class="content_icon">
+              <img src="catalog/view/theme/default/image/pro/pro4.jpg">
+            </div>
+            <div class="pro_click">
+              <a href="">2斤59元 顺丰包 海南</a>
+              <div class="list_price">¥ 46.00</div>
+              <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+            </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <a href=""><img src="catalog/view/theme/default/image/pro/pro3.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <a href=""><img src="catalog/view/theme/default/image/pro/pro2.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+            <a href=""><img src="catalog/view/theme/default/image/pro/pro1.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_content">
+          <div class="content_icon">
+              <a href=""><img src="catalog/view/theme/default/image/pro/pro2.jpg"></a>
+          </div>
+          <div class="pro_click">
+            <a href="">2斤59元 顺丰包 海南</a>
+            <div class="list_price">¥ 46.00</div>
+            <div class="list_saled">已售出<span class="saled_num">7719</span>件</div>
+          </div>
+        </div>
+        <div class="list_more">
+          <a href=""><span class="list_text">&nbsp;&nbsp;查看更多宝贝</span>
+          <img src="catalog/view/theme/default/image/icon/checkMore.jpg" alt=""></a>
+        </div>
+      </div>
+      <!-- 产品详情页“商品详情、评价、成交记录”的切换 june-->
+      <div class="pro_detail">
+        
+         <ul class="proBox">
+          <li class="proOption proOn0"><span id="spxq" class="spxq"><a href="#pro-0">商品详情</a></span></li>
+          <li class="proOption"><span id="pj" class="pj"><a href="#pro-1">评价</a></span></li>
+          <li class="proOption"><span id="cjjl" class="cjjl"><a href="#pro-2">成交记录</a></span></li>
+          </ul>
+          <div class="pro-area">
+            <div id="pro-0" class="pro-0 proOn-0">
+             <img src="catalog/view/theme/default/image/pro/qtxq.jpg" alt="晴天花材" class="hdst">
+            </div>
+            <div id="pro-1" class="pro-0">              
+                <div class="ass_detail">      
+                  <div class="ass_contt">
+                    <div style="overflow: hidden;">
+                      <div class="fl ass_user"><img src="catalog/view/theme/default/image/ass_user.png">酒暖回忆思念<span class="fr">说</span></div>
+                      <div class="fr ass_time">
+                        2013-07-28 10:59:21
+                      </div>
+                      <div class="ass_says">&nbsp;&nbsp;打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，打开包装，满屋子的香味啊，吃着口感也非常好，
+                      </div>
+                    </div>
+                  </div> 
+                  <div class="_page_">
+                    <ul>
+                      <li class="up_page"><a><img src="catalog/view/theme/default/image/icon/PgUp.png">上一页</a></li>
+                      <li><a>1</a></li>
+                      <li class="current_page"><a>2</a></li>
+                      <li><a>3</a></li>
+                      <li><a>4</a></li>
+                      <li><a>5</a></li>
+                      <li class="down_page"><a>下一页<img src="catalog/view/theme/default/image/icon/PgDn.png"></a></li>
+                    </ul>
+                 </div>
+              </div>
+            </div>
+            <div id="pro-2" class="pro-0">
+              <div class="right_div_table">
+                <table class="tb_th">
+                  <tbody><tr>
+                    <th style="width: 120px;">买家</th>
+                    <th style="width: 160px;">拍下价格</th>
+                    <th style="width: 110px;">数量</th>
+                    <th style="width: 285px;">付款时间</th>
+                    <th style="width: 230px;">菜品和型号</th>
+                  </tr>
+                </tbody></table>
+                <table class="deal_table">
+                  <tbody><tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                  <tr>
+                    <td class="buyer">刘先生</td>
+                    <td class="deal_price">12050元</td>
+                    <td class="deal_num">5</td>
+                    <td class="deal_time">2014-07-29 13:37:06</td>
+                    <td class="deal_pro">奶白菜 300g/包&nbsp;&nbsp;套装</td>
+                  </tr>
+                </tbody></table>
+              </div>
+            <div class="_page_">
+                    <ul>
+                      <li class="up_page"><a><img src="catalog/view/theme/default/image/icon/PgUp.png">上一页</a></li>
+                      <li><a>1</a></li>
+                      <li class="current_page"><a>2</a></li>
+                      <li><a>3</a></li>
+                      <li><a>4</a></li>
+                      <li><a>5</a></li>
+                      <li class="down_page"><a>下一页<img src="catalog/view/theme/default/image/icon/PgDn.png"></a></li>
+                    </ul>
+                 </div>
+              
+            </div>
+          </div>       
+
+      </div>
+      <!-- 产品详情页“商品详情、评价、成交记录”的切换 june-->
+
+    </div>
+  <div class="cart_icon" id="cart_icon">
+    <span id="pro_count">7</span>
+  </div>
+  <div class="cart" id="cart">
+    <div class="go_acc">
+      <div class="cart_close">
+        <a href="javascript:closeCart()">
+          <img src="catalog/view/theme/default/image/icon/cart_close.jpg">
+        </a>
+      </div>
+      <div class="acc">去结算</div>
+    </div>
+    <div class="cart_title">
+      <div style="float:left;">
+        <span class="tit_black">&nbsp;预估金额</span>
+        (
+        <span class="tit_red" id="priceAll">￥69.30</span>
+        )
+      </div>
+      <div style="float:right;">
+        <span class="tit_black">商品数量</span>
+        (
+        <span class="tit_red" id="pro_num">7</span>
+        )&nbsp;
+      </div>
+    </div>
+    <div class="cart_content" id="fullcart">
+      <table id="cart_table">
+        <tbody><tr>
+          <td class="cart_count count">
+            <span class="cart_reduce reduce"></span>
+            <input class="count_input" type="text" value="1">
+            <span class="cart_add add"></span>
+          </td>
+          <td>
+            <div class="pro_icon">
+              <img src="catalog/view/theme/default/image/icon/icon55.jpg"></div>
+          </td>
+          <td>
+            <div class="cart_click">
+              <a href="#">
+                春盛达】生态大态态态大态态
+态大态态约500g/份
+              </a>
+              <div style="margin-top:10px;">
+                促销价：
+                <span>
+                  ￥ <em>9.90</em>
+                </span>
+                /份
+              </div>
+            </div>
+          </td>
+          <td class="cart_delete">
+            <img src="catalog/view/theme/default/image/icon/deletebtn.jpg">
+          </td>
+        </tr>
+        <tr>
+          <td class="cart_count count">
+            <span class="cart_reduce reduce"></span>
+            <input class="count_input" type="text" value="1">
+            <span class="cart_add add"></span>
+          </td>
+          <td>
+            <div class="pro_icon">
+              <img src="catalog/view/theme/default/image/icon/icon55.jpg"></div>
+          </td>
+          <td>
+            <div class="cart_click">
+              <a href="#">
+                春盛达】生态大态态态大态态
+态大态态约500g/份
+              </a>
+              <div style="margin-top:10px;">
+                促销价：
+                <span>
+                  ￥ <em>9.90</em>
+                </span>
+                /份
+              </div>
+            </div>
+          </td>
+          <td class="cart_delete">
+            <img src="catalog/view/theme/default/image/icon/deletebtn.jpg">
+          </td>
+        </tr>
+        <tr>
+          <td class="cart_count count">
+            <span class="cart_reduce reduce"></span>
+            <input class="count_input" type="text" value="1">
+            <span class="cart_add add"></span>
+          </td>
+          <td>
+            <div class="pro_icon">
+              <img src="catalog/view/theme/default/image/icon/icon55.jpg"></div>
+          </td>
+          <td>
+            <div class="cart_click">
+              <a href="#">
+                春盛达】生态大态态态大态态
+态大态态约500g/份
+              </a>
+              <div style="margin-top:10px;">
+                促销价：
+                <span>
+                  ￥ <em>9.90</em>
+                </span>
+                /份
+              </div>
+            </div>
+          </td>
+          <td class="cart_delete">
+            <img src="catalog/view/theme/default/image/icon/deletebtn.jpg">
+          </td>
+        </tr>
+        <tr>
+          <td class="cart_count count">
+            <span class="cart_reduce reduce"></span>
+            <input class="count_input" type="text" value="1">
+            <span class="cart_add add"></span>
+          </td>
+          <td>
+            <div class="pro_icon">
+              <img src="catalog/view/theme/default/image/icon/icon55.jpg"></div>
+          </td>
+          <td>
+            <div class="cart_click">
+              <a href="#">
+                春盛达】生态大态态态大态态
+态大态态约500g/份
+              </a>
+              <div style="margin-top:10px;">
+                促销价：
+                <span>
+                  ￥ <em>9.90</em>
+                </span>
+                /份
+              </div>
+            </div>
+          </td>
+          <td class="cart_delete">
+            <img src="catalog/view/theme/default/image/icon/deletebtn.jpg">
+          </td>
+        </tr>
+        <tr>
+          <td class="cart_count count">
+            <span class="cart_reduce reduce"></span>
+            <input class="count_input" type="text" value="1">
+            <span class="cart_add add"></span>
+          </td>
+          <td>
+            <div class="pro_icon">
+              <img src="catalog/view/theme/default/image/icon/icon55.jpg"></div>
+          </td>
+          <td>
+            <div class="cart_click">
+              <a href="#">
+                春盛达】生态大态态态大态态
+态大态态约500g/份
+              </a>
+              <div style="margin-top:10px;">
+                促销价：
+                <span>
+                  ￥ <em>9.90</em>
+                </span>
+                /份
+              </div>
+            </div>
+          </td>
+          <td class="cart_delete">
+            <img src="catalog/view/theme/default/image/icon/deletebtn.jpg">
+          </td>
+        </tr>
+        <tr>
+          <td class="cart_count count">
+            <span class="cart_reduce reduce"></span>
+            <input class="count_input" type="text" value="1">
+            <span class="cart_add add"></span>
+          </td>
+          <td>
+            <div class="pro_icon">
+              <img src="catalog/view/theme/default/image/icon/icon55.jpg"></div>
+          </td>
+          <td>
+            <div class="cart_click">
+              <a href="#">
+                春盛达】生态大态态态大态态
+态大态态约500g/份
+              </a>
+              <div style="margin-top:10px;">
+                促销价：
+                <span>
+                  ￥ <em>9.90</em>
+                </span>
+                /份
+              </div>
+            </div>
+          </td>
+          <td class="cart_delete">
+            <img src="catalog/view/theme/default/image/icon/deletebtn.jpg">
+          </td>
+        </tr>
+        <tr>
+          <td class="cart_count count">
+            <span class="cart_reduce reduce"></span>
+            <input class="count_input" type="text" value="1">
+            <span class="cart_add add"></span>
+          </td>
+          <td>
+            <div class="pro_icon">
+              <img src="catalog/view/theme/default/image/icon/icon55.jpg"></div>
+          </td>
+          <td>
+            <div class="cart_click">
+              <a href="#">
+                春盛达】生态大态态态大态态
+态大态态约500g/份
+              </a>
+              <div style="margin-top:10px;">
+                促销价：
+                <span>
+                  ￥ <em>9.90</em>
+                </span>
+                /份
+              </div>
+            </div>
+          </td>
+          <td class="cart_delete">
+            <img src="catalog/view/theme/default/image/icon/deletebtn.jpg">
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+    <div class="cart_content" id="emptycart">
+      <span class="empty">
+        <img src="catalog/view/theme/default/image/icon/emptycart.png">
+      </span>
     </div>
   </div>
+    <!--
   <div id="tabs" class="htabs"><a href="#tab-description"><?php echo $tab_description; ?></a>
     <?php if ($attribute_groups) { ?>
     <a href="#tab-attribute"><?php echo $tab_attribute; ?></a>
@@ -260,6 +976,9 @@
     </table>
   </div>
   <?php } ?>
+-->
+<!-- 评论区-->
+<!--
   <?php if ($review_status) { ?>
   <div id="tab-review" class="tab-content">
     <div id="review"></div>
@@ -294,6 +1013,8 @@
     </div>
   </div>
   <?php } ?>
+-->
+<!--
   <?php if ($products) { ?>
   <div id="tab-related" class="tab-content">
     <div class="box-product">
@@ -320,6 +1041,8 @@
     </div>
   </div>
   <?php } ?>
+-->
+  <!--
   <?php if ($tags) { ?>
   <div class="tags"><b><?php echo $text_tags; ?></b>
     <?php for ($i = 0; $i < count($tags); $i++) { ?>
@@ -331,14 +1054,23 @@
     <?php } ?>
   </div>
   <?php } ?>
+-->
   <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
 $(document).ready(function() {
+    $(".jqzoom").imagezoom();
+  $("#thumblist li a").mouseover(function () {
+      $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
+    $(".jqzoom").attr('src',$(this).find("img").attr("mid"));
+    $(".jqzoom").attr('rel',$(this).find("img").attr("big"));
 	$('.colorbox').colorbox({
 		overlayClose: true,
 		opacity: 0.5,
 		rel: "colorbox"
 	});
+ 
+ 
+  });
 });
 //--></script> 
 <script type="text/javascript"><!--
@@ -471,4 +1203,6 @@ $(document).ready(function() {
 	$('.time').timepicker({timeFormat: 'h:m'});
 });
 //--></script> 
+  <script type="text/javascript" src="catalog/view/javascript/jquery.imagezoom.min.js"></script>
+
 <?php echo $footer; ?>

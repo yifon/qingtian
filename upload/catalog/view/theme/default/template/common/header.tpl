@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9,IE=10">
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/main.css" >
-    <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="catalog/view/javascript/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
     <script type="text/javascript" src="catalog/view/javascript/common.js"></script>

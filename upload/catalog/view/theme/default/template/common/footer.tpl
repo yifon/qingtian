@@ -31,7 +31,6 @@
     </div>
     <!-- footer部分结束 -->
 
-    <script src="catalog/view/javascript/jquery.min.js"></script>
     <script src="catalog/view/javascript/main.js"></script>
   </body>
 </html>

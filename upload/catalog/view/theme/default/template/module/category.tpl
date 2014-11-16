@@ -1,5 +1,5 @@
-<div class="pro_left list_left_list">
-  <div class="pro_left_01">
+
+   <div class="pro_left_01">
     <h2><?php echo $heading_title; ?></h2>
       <?php foreach ($categories as $category) { ?>
       <div class = "current2">
@@ -139,5 +139,5 @@
                 <img src="image/icon/checkMore.jpg" alt=""></a>
               </div>
             </div>
-</div>
+
 

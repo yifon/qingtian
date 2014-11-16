@@ -454,6 +454,7 @@ class ControllerProductCategory extends Controller {
 					
 			$this->response->setOutput($this->render());
 		}
+		
   	}
 }
 ?>
